@@ -26,7 +26,7 @@ namespace PlayerSystem
             CheckGround();
             ApplyGravitation();
             MoveVertical();
-            StartJump();
+           // StartJump();
         }
 
         private void OnEnable()
@@ -49,13 +49,13 @@ namespace PlayerSystem
                 if (_canSecondJump)
                 {
                     _secondJump = true;
-                    _audioSecondJump.Play();
+                 //   _audioSecondJump.Play();
                 }
                 _velocity.y = Mathf.Sqrt((_secondJump ? _playerConfig.JumpHeightSecond : _playerConfig.JumpHeight) * -2f * _playerConfig.Gravity);
                 if (!_secondJump)
                 {
                     _secondJumpTimer = StartCoroutine(LaunchTimerToSecondJump());
-                    _audioStartJump.Play();
+                   // _audioStartJump.Play();
                 }
             }
         }
@@ -121,7 +121,7 @@ namespace PlayerSystem
                 if (_startJumpHight - _characterController.transform.position.y > 1f)
                 {
                     GroundedFromHeight?.Invoke();
-                    _audioLanding.Play();
+                  //  _audioLanding.Play();
                 }
             }
             Debug.Log($"IsGrounded = {IsGrounded.Value}");
