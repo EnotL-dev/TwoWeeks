@@ -3,5 +3,5 @@ using PlayerSystem;
 
 public class MainController
 {
-    public static PlayerController playerController;
+    public PlayerController playerController;
 }

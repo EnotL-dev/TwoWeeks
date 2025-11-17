@@ -4,18 +4,19 @@ namespace SettingsSystem
 {
     public class SettingsManager
     {
-        private static InputConfig cachedConfig;
+        private InputConfig cachedInputConfig;
+        public LanguageIndex languageIndex = LanguageIndex.Eng;
 
         //Можно потом update добавить в реальнмо времени
-        public static InputConfig InputConfig ()
+        public InputConfig InputConfig ()
         {
-            if (cachedConfig == null)
+            if (cachedInputConfig == null)
             {
                 InputConfig playerinputConfig = Resources.Load<InputConfig>("PlayerSettings/InputConfig");
 
                 if (playerinputConfig)
                 {
-                    cachedConfig = playerinputConfig;
+                    cachedInputConfig = playerinputConfig;
                     return playerinputConfig;
                 }
                 else
@@ -26,8 +27,13 @@ namespace SettingsSystem
             } 
             else
             {
-                return cachedConfig;
+                return cachedInputConfig;
             }
+        }
+
+        public void ChangeLanguageIndex(LanguageIndex newIndex)
+        {
+            languageIndex = newIndex;
         }
     }
 }
