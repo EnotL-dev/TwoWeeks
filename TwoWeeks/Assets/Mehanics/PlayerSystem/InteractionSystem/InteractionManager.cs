@@ -6,7 +6,19 @@ namespace InteractionSystem
     {
         public void ProcessInteraction(InteractableObject interactable)
         {
-            interactable.Interact();
+            if(interactable is DialogObject d_obj)
+            {
+                Main.MainManagers.dialogManager.StartDialog(d_obj.dialog);
+            }
+            else if(interactable is ItemObject i_obj)
+            {
+                ProccesInteract(i_obj.item);
+            }
+        }
+
+        private void ProccesInteract(Item item)
+        {
+
         }
     }
 }

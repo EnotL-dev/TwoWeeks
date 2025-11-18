@@ -6,5 +6,8 @@ namespace SettingsSystem
     public class InputConfig : ScriptableObject
     {
         public KeyCode Interaction_Key;
+        [Space(5)]
+        [Header("Dialog system")]
+        public KeyCode Skip_Message_Key = KeyCode.Space;
     }
 }

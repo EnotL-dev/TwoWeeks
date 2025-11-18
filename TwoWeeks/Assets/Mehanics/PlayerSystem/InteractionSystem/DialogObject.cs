@@ -6,9 +6,13 @@ namespace InteractionSystem
     public class DialogObject : InteractableObject
     {
         public Dialog dialog;
-        public override void Interact()
+
+        public override string GetHintName()
         {
-            Debug.Log("Dialog opened");
+            if (dialog.GetNamePerson(0) != null)
+                return dialog.GetNamePerson(0);
+            else
+                return null;
         }
     }
 }
