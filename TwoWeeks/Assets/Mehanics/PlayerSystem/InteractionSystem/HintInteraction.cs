@@ -18,9 +18,10 @@ namespace InteractionSystem
         {
             playerTransform = Main.MainControllers.playerController.moving.transform;
 
-            string value = GetComponent<ItemObject>().item.GetName();
+            string value = GetComponent<InteractableObject>().GetHintName();
+
             if (value != null)
-                textMesh.text = $"E - {value}"; 
+                textMesh.text = $"{Main.MainManagers.settingsManager.InputConfig().Interaction_Key} - {value}"; 
         }
 
         private void Update()

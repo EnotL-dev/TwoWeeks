@@ -7,9 +7,9 @@ namespace InteractionSystem
     public class Item : ScriptableObject
     {
         [SerializeField]
-        private List<KeyValueLanguage> name_item;
+        private List<KeyValueLanguageArea> name_item;
         [SerializeField]
-        private List<KeyValueLanguage> description_item;
+        private List<KeyValueLanguageArea> description_item;
 
         public string GetName()
         {
