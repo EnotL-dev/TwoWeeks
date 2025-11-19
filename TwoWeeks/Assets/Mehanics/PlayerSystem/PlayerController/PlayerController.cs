@@ -1,5 +1,6 @@
 using UnityEngine;
 using InteractionSystem;
+using PlayerSystem.DialogSystem;
 
 namespace PlayerSystem
 {
@@ -11,6 +12,7 @@ namespace PlayerSystem
         public FootStepsSound footSteps;
         [Header("Controllers")]
         public InteractionController interactionController;
+        public DialogController dialogController;
 
         public void Awake()
         {

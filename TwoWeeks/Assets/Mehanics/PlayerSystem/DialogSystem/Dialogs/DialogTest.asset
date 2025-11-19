@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockPlayer: 0
   blockMes:
-  - speed_char: 0.05
-    materialText: {fileID: 0}
+  - autoskip: 1
+    canSkip: 0
+    msDelay_before_next_message: 2000
+    globalEffects:
+    - triggerWhen: 0
+      effect: {fileID: 11400000, guid: b28278c33daeb624e96b936f735e8dde, type: 2}
+      onEffectCompleted:
+        m_PersistentCalls:
+          m_Calls: []
+      overrideTagEffects: 0
     name_person:
     - key: 0
       value: Talker
@@ -26,8 +34,16 @@ MonoBehaviour:
       value: You have two choice
     - key: 1
       value: "\u0415\u0441\u0442\u044C \u0434\u0432\u0430 \u0441\u0442\u0443\u043B\u0430..."
-  - speed_char: 0.05
-    materialText: {fileID: 0}
+  - autoskip: 1
+    canSkip: 0
+    msDelay_before_next_message: 2000
+    globalEffects:
+    - triggerWhen: 0
+      effect: {fileID: 11400000, guid: b28278c33daeb624e96b936f735e8dde, type: 2}
+      onEffectCompleted:
+        m_PersistentCalls:
+          m_Calls: []
+      overrideTagEffects: 0
     name_person:
     - key: 0
       value: Talker

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using EasyTextEffects;
 
 namespace PlayerSystem.DialogSystem
 {
@@ -7,10 +9,12 @@ namespace PlayerSystem.DialogSystem
     public class MessageBlock
     {
         public bool autoskip = true;
-        public bool canSkip = true;
+        public bool canSkip = false;
         [Space(5)]
-        public float speed_char = 0.05f;
-        public Material materialText;
+        public int msDelay_before_next_message = 1000; //ms
+        [FormerlySerializedAs("effectsList")]
+        [Space(5)]
+        public List<GlobalTextEffectEntry> globalEffects; //speed determined by animation
         [SerializeField]
         public List<KeyValueLanguage> name_person;
         [SerializeField]

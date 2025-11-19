@@ -1,4 +1,5 @@
 ﻿using PlayerSystem.DialogSystem;
+using TMPro;
 using UnityEngine;
 
 namespace InteractionSystem
@@ -6,6 +7,9 @@ namespace InteractionSystem
     public class DialogObject : InteractableObject
     {
         public Dialog dialog;
+        [Space(5)]
+        public CanvasGroup canvasGroup;
+        public TextMeshProUGUI textMesh_Character;
 
         public override string GetHintName()
         {
