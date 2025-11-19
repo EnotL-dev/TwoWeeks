@@ -6,9 +6,12 @@ namespace InteractionSystem
     {
         public Item item;
 
-        public override void Interact()
+        public override string GetHintName()
         {
-            Debug.Log("Item taken");
+            if (item.GetName() != null)
+                return item.GetName();
+            else
+                return null;
         }
     }
 }
