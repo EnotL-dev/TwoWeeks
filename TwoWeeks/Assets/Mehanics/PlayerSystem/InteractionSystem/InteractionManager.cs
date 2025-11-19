@@ -8,7 +8,7 @@ namespace InteractionSystem
         {
             if(interactable is DialogObject d_obj)
             {
-                Main.MainManagers.dialogManager.StartDialog(d_obj.dialog);
+                Main.MainManagers.dialogManager.StartDialog(d_obj);
             }
             else if(interactable is ItemObject i_obj)
             {

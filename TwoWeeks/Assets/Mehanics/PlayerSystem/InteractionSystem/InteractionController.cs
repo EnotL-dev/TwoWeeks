@@ -18,10 +18,7 @@ namespace InteractionSystem
 
         private void Update()
         {
-            if (Input.GetKeyDown(interactionKey))
-            {
-                ShootRaycast();
-            }
+            ShootRaycast();
         }
         private void ShootRaycast()
         {
@@ -32,8 +29,12 @@ namespace InteractionSystem
 
             if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
             {
-                if(hit.transform.gameObject.GetComponent<InteractableObject>() != null)
+                if (hit.transform.gameObject.GetComponent<InteractableObject>() != null)
+                {
+                    if (!Input.GetKeyDown(interactionKey) && hit.transform.gameObject.GetComponent<InteractableObject>().ForcedCall == false) return;
+
                     Main.MainManagers.interactionManager.ProcessInteraction(hit.transform.gameObject.GetComponent<InteractableObject>());
+                }
             }
         }
     }
