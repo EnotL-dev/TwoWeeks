@@ -5,7 +5,7 @@ public static class Main
     public static MainController MainControllers;
     public static MainManager MainManagers;
 
-    public static bool PlayerBusy = false;
+    public static bool lockedPlayer = false; //запрещает движение игрока и камеры
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Initialize()

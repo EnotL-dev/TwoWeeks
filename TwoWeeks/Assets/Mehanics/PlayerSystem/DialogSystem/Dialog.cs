@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 using EasyTextEffects;
+using EasyTextEffects.Effects;
 
 namespace PlayerSystem.DialogSystem
 {
@@ -14,7 +15,8 @@ namespace PlayerSystem.DialogSystem
         public int msDelay_before_next_message = 1000; //ms
         [FormerlySerializedAs("effectsList")]
         [Space(5)]
-        public List<GlobalTextEffectEntry> globalEffects; //speed determined by animation
+        public List<GlobalTextEffectEntry> endEffects;
+        public List<GlobalTextEffectEntry> startEffects; //speed determined by animation
         [SerializeField]
         public List<KeyValueLanguage> name_person;
         [SerializeField]

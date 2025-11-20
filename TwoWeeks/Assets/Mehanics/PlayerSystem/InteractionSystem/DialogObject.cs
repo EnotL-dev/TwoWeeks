@@ -1,12 +1,17 @@
 ﻿using PlayerSystem.DialogSystem;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace InteractionSystem
 {
     public class DialogObject : InteractableObject
     {
         public Dialog dialog;
+        [Space(5)]
+        public UnityEvent DialogStartedEvents;
+        [Space(5)]
+        public UnityEvent DialogCompletedEvents;
         [Space(5)]
         public CanvasGroup canvasGroup;
         public TextMeshProUGUI textMesh_Character;

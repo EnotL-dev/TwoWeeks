@@ -12,13 +12,13 @@ namespace InteractionSystem
             }
             else if(interactable is ItemObject i_obj)
             {
-                ProccesInteract(i_obj.item);
+                ItemInteraction(i_obj);
             }
         }
 
-        private void ProccesInteract(Item item)
+        private void ItemInteraction(ItemObject itemObj)
         {
-
+            itemObj.StartInteractedEvents?.Invoke();
         }
     }
 }
