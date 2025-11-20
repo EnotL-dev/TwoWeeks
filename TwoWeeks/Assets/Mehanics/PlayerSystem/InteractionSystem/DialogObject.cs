@@ -1,4 +1,5 @@
 ﻿using PlayerSystem.DialogSystem;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -13,8 +14,7 @@ namespace InteractionSystem
         [Space(5)]
         public UnityEvent DialogCompletedEvents;
         [Space(5)]
-        public CanvasGroup canvasGroup;
-        public TextMeshProUGUI textMesh_Character;
+        public List<CanvasForPerson> canvases;
 
         public override string GetHintName()
         {

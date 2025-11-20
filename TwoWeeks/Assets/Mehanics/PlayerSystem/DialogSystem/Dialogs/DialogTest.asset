@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 395b79f20b42d454ea000d0fe8a0b643, type: 3}
   m_Name: DialogTest
   m_EditorClassIdentifier: 
-  lockPlayer: 1
+  lockPlayer: 0
   blockMes:
   - autoskip: 0
     canSkip: 1
@@ -31,6 +31,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
       overrideTagEffects: 0
+    person_tag: player
     name_person:
     - key: 0
       value: Talker
@@ -58,6 +59,7 @@ MonoBehaviour:
         m_PersistentCalls:
           m_Calls: []
       overrideTagEffects: 0
+    person_tag: person
     name_person:
     - key: 0
       value: Talker

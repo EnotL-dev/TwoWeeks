@@ -17,6 +17,7 @@ namespace PlayerSystem.DialogSystem
         [Space(5)]
         public List<GlobalTextEffectEntry> endEffects;
         public List<GlobalTextEffectEntry> startEffects; //speed determined by animation
+        public string person_tag = "1";
         [SerializeField]
         public List<KeyValueLanguage> name_person;
         [SerializeField]
