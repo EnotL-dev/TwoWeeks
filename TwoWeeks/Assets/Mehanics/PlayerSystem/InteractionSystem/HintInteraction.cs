@@ -70,7 +70,7 @@ namespace InteractionSystem
         {
             Color color = textMesh.color;
 
-            while (color.a < 0.9f)
+            while (color.a < 1f)
             {
                 color.a += fadeSpeed * Time.deltaTime;
                 textMesh.color = color;

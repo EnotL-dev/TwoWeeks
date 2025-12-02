@@ -6,31 +6,40 @@ namespace PlayerSystem.DialogSystem
 {
     public class DialogController : MonoBehaviour
     {
+        [Header("Check for move UI in dialogs")]
+        [SerializeField] private LayerMask interactableLayer; //сюда ссылается dialogUI 
+        [SerializeField] private float rayDistance = 5f; //сюда ссылается dialogUI 
+        [Header("Main UI")]
         public CanvasGroup canvasGroup_MainUI;
-        public TextMeshProUGUI textMesh_MainUI;
-        [Space(10)]
-        [SerializeField] private LayerMask interactableLayer;
-        [SerializeField] private float rayDistance = 2.5f;
+        public TextMeshProUGUI textStart_MainUI;
+        public TextMeshProUGUI textEnd_MainUI;
+        [Header("Head UI")]
+        public CanvasGroup prefabHeadUI;
+        [HideInInspector] public TextMeshProUGUI textStart_HeadUI;
+        [HideInInspector] public TextMeshProUGUI textEnd_HeadUI;
 
         private Camera _camera;
+
+        public Camera GetCamera()
+        {
+            return _camera;
+        }
+
+        public LayerMask GetInteractableLayer()
+        {
+            return interactableLayer;
+        }
+
+        public float GetRayDistance()
+        {
+            return rayDistance;
+        }
 
         private void Start()
         {
             _camera = GetComponent<Camera>();
-        }
-
-        public bool RaycastHitTarget()
-        {
-            if (_camera == null) return false;
-
-            Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
-            {
-                return hit.transform.gameObject.GetComponent<DialogObject>() != null;
-            }
-            else return false;
+            textStart_HeadUI = Instantiate(prefabHeadUI).GetComponentInChildren<TextMeshProUGUI>();
+            textEnd_HeadUI = Instantiate(prefabHeadUI).GetComponentInChildren<TextMeshProUGUI>();
         }
     }
 }
