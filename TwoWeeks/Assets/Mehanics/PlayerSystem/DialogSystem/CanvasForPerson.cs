@@ -14,7 +14,7 @@ namespace PlayerSystem.DialogSystem
         public Transform person_transform;
         [Space(5)]
         public CanvasGroup canvasGroup;
-        public TextMeshProUGUI textStartPerson;
-        public TextMeshProUGUI textEndPerson;
+        public TextMeshProUGUI textStart_PersonUI;
+        public TextMeshProUGUI textEnd_Person;
     }
 }

@@ -367,8 +367,8 @@ MonoBehaviour:
   - person_tag: person
     person_transform: {fileID: 197155939703655884}
     canvasGroup: {fileID: 7649738438667540478}
-    textStartPerson: {fileID: 2375521338192762903}
-    textEndPerson: {fileID: 6952841668264059346}
+    textStart_PersonUI: {fileID: 2375521338192762903}
+    textEnd_Person: {fileID: 6952841668264059346}
 --- !u!114 &2774827002396185417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,8 +495,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -786,8 +786,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

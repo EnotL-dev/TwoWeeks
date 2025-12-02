@@ -9,4 +9,5 @@ public class MainManager
     public SettingsManager settingsManager = new SettingsManager();
     public InteractionManager interactionManager = new InteractionManager();
     public DialogManager dialogManager = new DialogManager();
+    public DialogUIManager dialogUIManager = new DialogUIManager();
 }
