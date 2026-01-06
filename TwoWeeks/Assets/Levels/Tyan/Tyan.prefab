@@ -476,7 +476,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2385532784946308214}
-  - component: {fileID: 2478255388331793885}
   m_Layer: 0
   m_Name: Tails
   m_TagString: Untagged
@@ -501,67 +500,6 @@ Transform:
   - {fileID: 6271774252809905147}
   m_Father: {fileID: 3664532634204928748}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2478255388331793885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2542530180218953121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aa2b9bccfefda549bd1cf67fd922ad8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_RootBones:
-  - {fileID: 2385532784946308214}
-  m_EndBones:
-  - {fileID: 8389735608143422173}
-  - {fileID: 6271774252809905147}
-  m_Material: {fileID: 0}
-  m_StartDepth: 0
-  m_SiblingConstraints: 0
-  m_ClosedSiblings: 0
-  m_SiblingRotationConstraints: 1
-  m_LengthUnification: 0
-  m_CollisionLayers:
-    serializedVersion: 2
-    m_Bits: 1
-  m_ExtraColliders: []
-  m_Radius: 0
-  m_RadiusCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  m_DeltaTimeMode: 0
-  m_ConstantDeltaTime: 0.03
-  m_Iterations: 1
-  m_SleepThreshold: 0.005
-  m_GravityAligner: {fileID: 0}
-  m_Gravity: {x: 0, y: 0, z: 0}
-  m_ForceModule: {fileID: 0}
-  m_ForceScale: 1
-  m_SimulateSpace: {fileID: 0}
 --- !u!1 &2613106686887840899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,9 +1275,9 @@ MonoBehaviour:
   _eyesStates:
     _opened: {fileID: 3119124966238224489}
     _closed: {fileID: 8086846914486511676}
-  _eyesOpenTime: 2
-  _eyesCloseTime: 0.2
-  _mouthSpeakFrequency: 0.2
+  _eyesOpenTime: 3
+  _eyesCloseTime: 0.1
+  _mouthSpeakFrequency: 0.1
   _mouthStates:
     _mouthNormalOpened: {fileID: 6635908321185618770}
     _mouthNormalClosed: {fileID: 7381488519135496962}
