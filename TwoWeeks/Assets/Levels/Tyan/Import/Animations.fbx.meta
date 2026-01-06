@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03ab9b872b371134590e4021ceb4a74a
+guid: b60b38ee9cf985148a350ff3b79edba8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -22,14 +22,153 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|AAA_Idle
+      takeName: Armature|AAA_Idle
+      internalID: 7435464587811694976
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Bone
+        weight: 1
+      - path: Armature/Bone/Arm_Ik.L
+        weight: 0
+      - path: Armature/Bone/Arm_Ik.L/UpperArm.L.001
+        weight: 0
+      - path: Armature/Bone/Arm_Ik.R
+        weight: 0
+      - path: Armature/Bone/Arm_Ik.R/UpperArm.R.001
+        weight: 0
+      - path: Armature/Bone/Hips
+        weight: 1
+      - path: Armature/Bone/Hips/Skirt_Backward.L
+        weight: 0
+      - path: Armature/Bone/Hips/Skirt_Backward.R
+        weight: 0
+      - path: Armature/Bone/Hips/Skirt_Forward.L
+        weight: 0
+      - path: Armature/Bone/Hips/Skirt_Forward.R
+        weight: 0
+      - path: Armature/Bone/Hips/Skirt_Side.L
+        weight: 0
+      - path: Armature/Bone/Hips/Skirt_Side.R
+        weight: 0
+      - path: Armature/Bone/Hips/Spine
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck/Head
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck/Head/Eyebrow.L
+        weight: 0
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck/Head/Eyebrow.R
+        weight: 0
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck/Head/Eyes
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck/Head/Head_Hair.L
+        weight: 0
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck/Head/Head_Hair.R
+        weight: 0
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Neck/Head/Mouse
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L/UpperArm.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L/UpperArm.L/LowerArm.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Thumb_1.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Thumb_1.L/Thumb_2.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Thumb_1.L/Thumb_2.L/Thumb_3.L
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R/UpperArm.R
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R/UpperArm.R/LowerArm.R
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Thumb_1.R
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Thumb_1.R/Thumb_2.R
+        weight: 1
+      - path: Armature/Bone/Hips/Spine/Chest/UpperChest/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Thumb_1.R/Thumb_2.R/Thumb_3.R
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.L
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.L/LowerLeg.L
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.L/LowerLeg.L/Foot.L
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.L/LowerLeg.L/Foot.L/Toes.L
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.R
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.R/LowerLeg.R
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.R/LowerLeg.R/Foot.R
+        weight: 1
+      - path: Armature/Bone/Hips/UpperLeg.R/LowerLeg.R/Foot.R/Toes.R
+        weight: 1
+      - path: Armature/Bone/Leg_Ik_Ground.L
+        weight: 0
+      - path: Armature/Bone/Leg_Ik_Ground.L/Leg_Ik.L
+        weight: 0
+      - path: Armature/Bone/Leg_Ik_Ground.L/Leg_Ik.L/Leg_Knee.L
+        weight: 0
+      - path: Armature/Bone/Leg_Ik_Ground.R
+        weight: 0
+      - path: Armature/Bone/Leg_Ik_Ground.R/Leg_Ik.R
+        weight: 0
+      - path: Armature/Bone/Leg_Ik_Ground.R/Leg_Ik.R/Leg_Knee.R
+        weight: 0
+      maskType: 0
+      maskSource: {fileID: 31900000, guid: 01976b89fada1ba439d3d7bd2731abd9, type: 2}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -242,6 +381,22 @@ ModelImporter:
         modified: 0
     - boneName: Toes.R
       humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Eyes
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Mouse
+      humanName: Jaw
       limit:
         min: {x: 0, y: 0, z: 0}
         max: {x: 0, y: 0, z: 0}
@@ -638,11 +793,11 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 03ab9b872b371134590e4021ceb4a74a, type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0
