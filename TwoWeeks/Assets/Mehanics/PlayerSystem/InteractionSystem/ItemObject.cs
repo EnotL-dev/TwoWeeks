@@ -8,6 +8,8 @@ namespace InteractionSystem
         public Item item;
         [Space(5)]
         public UnityEvent StartInteractedEvents;
+        public UnityEvent OnPointerEnter;
+        public UnityEvent OnPointerExit;
 
         public override string GetHintName()
         {
