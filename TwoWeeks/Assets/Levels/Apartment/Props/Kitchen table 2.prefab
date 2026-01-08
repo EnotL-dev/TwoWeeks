@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 1798152253586372334}
   - component: {fileID: 1946577519565822913}
   - component: {fileID: 7000957139926025622}
-  m_Layer: 0
+  - component: {fileID: 2281967080436116583}
+  - component: {fileID: 2886849886502134378}
+  - component: {fileID: 8276495596477966924}
+  - component: {fileID: 6962131655834941960}
+  m_Layer: 10
   m_Name: Kitchen table 2_LeftDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,6 +69,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1c543d959064ae244b0c9bddff423810, type: 2}
+  - {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -86,6 +91,139 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2281967080436116583
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731834558267952558}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78118545, y: 0.6478098, z: 0.06783068}
+  m_Center: {x: -0.39059278, y: -0.000000029802322, z: 0.03391534}
+--- !u!114 &2886849886502134378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731834558267952558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 064934e4ab630a3458a8392f4a50bcf7, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8276495596477966924}
+        m_TargetAssemblyTypeName: Environment.Opener, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6962131655834941960}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6962131655834941960}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8276495596477966924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731834558267952558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81215be8fee1e9b44a2832ae20e4745c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationDuration: 0.5
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _openRotation: {x: 0, y: 90, z: 0}
+--- !u!114 &6962131655834941960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731834558267952558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 7000957139926025622}
+  _parameterName: _Enable
 --- !u!1 &5627874173841975808
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,7 +235,11 @@ GameObject:
   - component: {fileID: 6578593254902486963}
   - component: {fileID: 376160927667214394}
   - component: {fileID: 9044653880902832750}
-  m_Layer: 0
+  - component: {fileID: 1920423258061495502}
+  - component: {fileID: 6691012982704664227}
+  - component: {fileID: 6529373240050325743}
+  - component: {fileID: 2701977020392795570}
+  m_Layer: 10
   m_Name: Kitchen table 2_RightCargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +293,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1c543d959064ae244b0c9bddff423810, type: 2}
+  - {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,6 +315,139 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1920423258061495502
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627874173841975808}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78118545, y: 0.24580622, z: 1.0878085}
+  m_Center: {x: -0.000000029802322, y: 0, z: -0.47607356}
+--- !u!114 &6691012982704664227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627874173841975808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 064934e4ab630a3458a8392f4a50bcf7, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6529373240050325743}
+        m_TargetAssemblyTypeName: Environment.CargoMover, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2701977020392795570}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2701977020392795570}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6529373240050325743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627874173841975808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66094c99ae6dc7b46b71db5bfc9fb713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationDuration: 0.5
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _movePosition: {x: 0.5, y: 0, z: 0}
+--- !u!114 &2701977020392795570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5627874173841975808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 9044653880902832750}
+  _parameterName: _Enable
 --- !u!1 &6775133577641339335
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +549,11 @@ GameObject:
   - component: {fileID: 5167736449618288450}
   - component: {fileID: 5198348618199490742}
   - component: {fileID: 5891301801583656856}
-  m_Layer: 0
+  - component: {fileID: 3077022693011743927}
+  - component: {fileID: 8911252163243611057}
+  - component: {fileID: 6532740445558231404}
+  - component: {fileID: 7052574922093481111}
+  m_Layer: 10
   m_Name: Kitchen table 2_LeftCargo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,6 +607,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1c543d959064ae244b0c9bddff423810, type: 2}
+  - {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -348,6 +629,139 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3077022693011743927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681710144986367848}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78118545, y: 0.24580622, z: 1.0878085}
+  m_Center: {x: -0.00000008940697, y: 0, z: -0.47607356}
+--- !u!114 &8911252163243611057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681710144986367848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 064934e4ab630a3458a8392f4a50bcf7, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6532740445558231404}
+        m_TargetAssemblyTypeName: Environment.CargoMover, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7052574922093481111}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7052574922093481111}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6532740445558231404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681710144986367848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66094c99ae6dc7b46b71db5bfc9fb713, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationDuration: 0.5
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _movePosition: {x: 0.5, y: 0, z: 0}
+--- !u!114 &7052574922093481111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8681710144986367848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 5891301801583656856}
+  _parameterName: _Enable
 --- !u!1 &8982460597322533552
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,7 +773,11 @@ GameObject:
   - component: {fileID: 3680322807212419900}
   - component: {fileID: 7674962627232928157}
   - component: {fileID: 6102864722736572512}
-  m_Layer: 0
+  - component: {fileID: 3700725114697727884}
+  - component: {fileID: 1560328369107999927}
+  - component: {fileID: 1368718719881803616}
+  - component: {fileID: 2972804065254241328}
+  m_Layer: 10
   m_Name: Kitchen table 2_RightDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,6 +831,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1c543d959064ae244b0c9bddff423810, type: 2}
+  - {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -434,3 +853,136 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3700725114697727884
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982460597322533552}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.78118545, y: 0.6478098, z: 0.06783068}
+  m_Center: {x: 0.39059278, y: -0.000000029802322, z: 0.03391534}
+--- !u!114 &1560328369107999927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982460597322533552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 064934e4ab630a3458a8392f4a50bcf7, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1368718719881803616}
+        m_TargetAssemblyTypeName: Environment.Opener, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2972804065254241328}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2972804065254241328}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1368718719881803616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982460597322533552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81215be8fee1e9b44a2832ae20e4745c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationDuration: 0.5
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _openRotation: {x: 0, y: -90, z: 0}
+--- !u!114 &2972804065254241328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8982460597322533552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 6102864722736572512}
+  _parameterName: _Enable

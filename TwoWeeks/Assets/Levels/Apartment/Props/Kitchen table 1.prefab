@@ -99,7 +99,11 @@ GameObject:
   - component: {fileID: 2518135938868872284}
   - component: {fileID: 158403562121227832}
   - component: {fileID: 4330826751397951926}
-  m_Layer: 0
+  - component: {fileID: 8537894008922119631}
+  - component: {fileID: 1844994039704156416}
+  - component: {fileID: 6783212327439364802}
+  - component: {fileID: 8189331898533654964}
+  m_Layer: 10
   m_Name: Kitchen table 1_Right Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,6 +157,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1c543d959064ae244b0c9bddff423810, type: 2}
+  - {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -174,6 +179,139 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8537894008922119631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172748161921847468}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79046506, y: 0.91504896, z: 0.06783366}
+  m_Center: {x: 0.39523253, y: 0.000000014901161, z: 0.03391683}
+--- !u!114 &1844994039704156416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172748161921847468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 064934e4ab630a3458a8392f4a50bcf7, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6783212327439364802}
+        m_TargetAssemblyTypeName: Environment.Opener, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8189331898533654964}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8189331898533654964}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6783212327439364802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172748161921847468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81215be8fee1e9b44a2832ae20e4745c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationDuration: 0.5
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _openRotation: {x: 0, y: -90, z: 0}
+--- !u!114 &8189331898533654964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7172748161921847468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 4330826751397951926}
+  _parameterName: _Enable
 --- !u!1 &8158381960157400253
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,7 +323,11 @@ GameObject:
   - component: {fileID: 7335877395257903357}
   - component: {fileID: 3067396581034788285}
   - component: {fileID: 9033868800767777869}
-  m_Layer: 0
+  - component: {fileID: 6926136939665923284}
+  - component: {fileID: 5874011168734958858}
+  - component: {fileID: 3148920403647567602}
+  - component: {fileID: 4053694078444467600}
+  m_Layer: 10
   m_Name: Kitchen table 1_Left Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,6 +381,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 1c543d959064ae244b0c9bddff423810, type: 2}
+  - {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -260,3 +403,136 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6926136939665923284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158381960157400253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 064934e4ab630a3458a8392f4a50bcf7, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5874011168734958858}
+        m_TargetAssemblyTypeName: Environment.Opener, Assembly-CSharp
+        m_MethodName: Toggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4053694078444467600}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4053694078444467600}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5874011168734958858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158381960157400253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81215be8fee1e9b44a2832ae20e4745c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationDuration: 0.5
+  _curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _openRotation: {x: 0, y: 90, z: 0}
+--- !u!65 &3148920403647567602
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158381960157400253}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.79046506, y: 0.91504896, z: 0.06783366}
+  m_Center: {x: -0.3952326, y: 0.000000014901161, z: 0.03391683}
+--- !u!114 &4053694078444467600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158381960157400253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 9033868800767777869}
+  _parameterName: _Enable

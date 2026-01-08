@@ -10,6 +10,7 @@ namespace InteractionSystem
         private KeyCode interactionKey => Main.MainManagers.settingsManager.InputConfig().Interaction_Key;
 
         private Camera _camera;
+        private InteractableObject _lastPointed;
 
         private void Start()
         {
@@ -28,15 +29,29 @@ namespace InteractionSystem
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer))
+            InteractableObject interactableObject = null;
+            if (Physics.Raycast(ray, out hit, rayDistance, interactableLayer) && hit.transform.gameObject.TryGetComponent(out interactableObject))
             {
-                if (hit.transform.gameObject.GetComponent<InteractableObject>() != null)
+                if (_lastPointed != interactableObject)
                 {
-                    if (!Input.GetKeyDown(interactionKey) && hit.transform.gameObject.GetComponent<InteractableObject>().ForcedCall == false) return;
-
-                    Main.MainManagers.interactionManager.ProcessInteraction(hit.transform.gameObject.GetComponent<InteractableObject>());
+                    if (_lastPointed != null)
+                    {
+                        Main.MainManagers.interactionManager.OnPointerExit(_lastPointed);
+                        _lastPointed = null;
+                    }
+                    Main.MainManagers.interactionManager.OnPointerEnter(interactableObject);
                 }
+                _lastPointed = interactableObject;
+                if (!Input.GetKeyDown(interactionKey) && interactableObject.ForcedCall == false)
+                    return;
+                Main.MainManagers.interactionManager.ProcessInteraction(interactableObject);
             }
+            else if (_lastPointed != null)
+            {
+                Main.MainManagers.interactionManager.OnPointerExit(_lastPointed);
+                _lastPointed = null;
+            }
+            
         }
     }
 }
