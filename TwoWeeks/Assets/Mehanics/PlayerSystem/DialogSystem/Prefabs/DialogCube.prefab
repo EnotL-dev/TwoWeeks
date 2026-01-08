@@ -368,7 +368,7 @@ MonoBehaviour:
     person_transform: {fileID: 197155939703655884}
     canvasGroup: {fileID: 7649738438667540478}
     textStart_PersonUI: {fileID: 2375521338192762903}
-    textEnd_Person: {fileID: 6952841668264059346}
+    textEnd_PersonUI: {fileID: 6952841668264059346}
 --- !u!114 &2774827002396185417
 MonoBehaviour:
   m_ObjectHideFlags: 0
