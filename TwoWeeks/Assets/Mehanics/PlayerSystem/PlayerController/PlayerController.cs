@@ -2,6 +2,7 @@ using UnityEngine;
 using InteractionSystem;
 using PlayerSystem.DialogSystem;
 using Unity.Cinemachine;
+using PlayerSystem.QuestSystem;
 
 namespace PlayerSystem
 {
@@ -16,6 +17,7 @@ namespace PlayerSystem
         [Header("Controllers")]
         public InteractionController interactionController;
         public DialogController dialogController;
+        public QuestController questController;
 
         public void Awake()
         {

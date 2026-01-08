@@ -15,6 +15,6 @@ namespace PlayerSystem.DialogSystem
         [Space(5)]
         public CanvasGroup canvasGroup;
         public TextMeshProUGUI textStart_PersonUI;
-        public TextMeshProUGUI textEnd_Person;
+        public TextMeshProUGUI textEnd_PersonUI;
     }
 }

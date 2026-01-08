@@ -45,20 +45,21 @@ namespace PlayerSystem.DialogSystem
 
             foreach(CanvasForPerson canvasFromPool in pool_personCanvases)
             {
-                if(canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>() == animatingTextUI) //animatingTextUI - ЭТО СТАРТОВЫЙ ТЕКСТ 
+                try
                 {
-                    /*
-                    canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.RemoveAllListeners(); //на всякий
-                    canvasFromPool.textEnd_Person.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.RemoveAllListeners(); //на всякий
-                    canvasFromPool.textEnd_Person.GetComponent<TextEffect>().StopAllEffects();
+                    if (canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>() == animatingTextUI) //animatingTextUI - ЭТО СТАРТОВЫЙ ТЕКСТ 
+                    {
+                        canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.RemoveAllListeners(); //на всякий
+                        canvasFromPool.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.RemoveAllListeners(); //на всякий
+                        canvasFromPool.textEnd_PersonUI.GetComponent<TextEffect>().StopAllEffects();
 
-                    canvasFromPool.textEnd_Person.text = canvasFromPool.textStart_PersonUI.text;
-                    canvasFromPool.textStart_PersonUI.text = "";
+                        canvasFromPool.textEnd_PersonUI.text = canvasFromPool.textStart_PersonUI.text;
+                        canvasFromPool.textStart_PersonUI.text = "";
 
-                    canvasFromPool.textEnd_Person.GetComponent<TextEffect>().Refresh();
-                    break;
-                    */
-                }
+                        canvasFromPool.textEnd_PersonUI.GetComponent<TextEffect>().Refresh();
+                        break;
+                    }
+                } catch { }
             }
 
             await UniTask.Delay(msDelay);
@@ -179,10 +180,10 @@ namespace PlayerSystem.DialogSystem
                 {
                     if (canvas.person_tag == person_tag)
                     {
-                        canvas.textEnd_Person.text = fillingtext;
-                        canvas.textEnd_Person.GetComponent<TextEffect>().globalEffects = endEffects;
-                        canvas.textEnd_Person.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.AddListener(() => ResetEndTextAfterEndAnimation(person_tag));
-                        canvas.textEnd_Person.GetComponent<TextEffect>().Refresh();
+                        canvas.textEnd_PersonUI.text = fillingtext;
+                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects = endEffects;
+                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.AddListener(() => ResetEndTextAfterEndAnimation(person_tag));
+                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().Refresh();
 
                         break;
                     }
@@ -208,8 +209,8 @@ namespace PlayerSystem.DialogSystem
                 {
                     if (canvas.person_tag == person_tag)
                     {
-                        canvas.textEnd_Person.text = "";
-                        canvas.textEnd_Person.GetComponent<TextEffect>().Refresh();
+                        canvas.textEnd_PersonUI.text = "";
+                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().Refresh();
 
                         break;
                     }
