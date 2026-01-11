@@ -6,10 +6,13 @@ namespace InteractionSystem
     [CreateAssetMenu(fileName = "Item", menuName = "Items/Item")]
     public class Item : ScriptableObject
     {
+        public ItemObject Prefab => _prefab;
+
         [SerializeField]
         private List<KeyValueLanguageArea> name_item;
         [SerializeField]
         private List<KeyValueLanguageArea> description_item;
+        [SerializeField] private ItemObject _prefab;
 
         public string GetName()
         {

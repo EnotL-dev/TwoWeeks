@@ -10,21 +10,23 @@ namespace MiniGames
         [SerializeField] private QuestController _questController;
         [SerializeField] private Quest _questPan;
         [SerializeField] private Quest _questIngridients;
-        [SerializeField] private List<ItemObject> _interactionObjects = new();
+        [SerializeField] private List<ItemObject> _cabinets = new();
+        [SerializeField] private List<ItemObject> _cookware = new();
+        [SerializeField] private List<ItemObject> _dishes = new();
+        [SerializeField] private List<ItemObject> _ingredients = new();
 
         public void StartMiniGame()
         {
-            foreach (var item in _interactionObjects) 
-            {
-                item.enabled = true;
-            }
+            UnblockCabinets();
+            UnblockCookware();
             _questController.AddQuest(_questPan);
         }
 
-        public void NextQuest()
+        public void QuestStartCooking()
         {
             _questController.CompleteQuest(_questPan);
             _questController.AddQuest(_questIngridients);
+            UnblockIngredients();
         }
 
         private void Update()
@@ -37,9 +39,33 @@ namespace MiniGames
 
         private void Start()
         {
-            foreach (var item in _interactionObjects)
+            foreach (var item in _cabinets)
             {
                 item.enabled = false;
+            }
+        }
+
+        private void UnblockCabinets()
+        {
+            foreach (var item in _cabinets)
+            {
+                item.enabled = true;
+            }
+        }
+
+        private void UnblockCookware()
+        {
+            foreach (var item in _cookware)
+            {
+                item.enabled = true;
+            }
+        }
+
+        private void UnblockIngredients()
+        {
+            foreach (var item in _ingredients)
+            {
+                item.enabled = true;
             }
         }
     }

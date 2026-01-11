@@ -9,8 +9,7 @@ namespace MiniGames
 
         public void Place()
         {
-            var item = Main.MainControllers.playerController.itemHolder.Extract();
-            item.gameObject.SetActive(false);
+            Destroy(Main.MainControllers.playerController.itemHolder.Extract().gameObject);
             OnPlace?.Invoke();
             gameObject.SetActive(false);
         }
