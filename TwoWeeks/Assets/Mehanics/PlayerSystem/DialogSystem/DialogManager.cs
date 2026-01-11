@@ -39,8 +39,7 @@ namespace PlayerSystem.DialogSystem
             DialogCompletedEvents = dialogObj.DialogCompletedEvents; 
             dialogObj.DialogStartedEvents?.Invoke(); //Вызов ивентов назначенных в DialogObject
 
-            Main.MainManagers.dialogUIManager.StartUpdateCanvases(dialogObj.canvases);
-            ProcessBlock(dialogObj.dialog).Forget();
+            ProcessDialog(dialogObj).Forget();
         }
 
         private void EndDialog()
@@ -49,7 +48,6 @@ namespace PlayerSystem.DialogSystem
             DialogCompletedEvents?.Invoke(); //Вызов ивентов назначенных в DialogObject
             PlayerControllersLocks(false);
 
-            Main.MainManagers.dialogUIManager.StopUpdateCanvases();
             TimerBeforeNextDialog().Forget();
         }
 
@@ -67,14 +65,16 @@ namespace PlayerSystem.DialogSystem
 
         public void Set_next_message_flag(bool newflag) => next_message_flag = newflag;
 
-        private async UniTask ProcessBlock(Dialog dialog) 
+        private async UniTask ProcessDialog(DialogObject dialogObject) 
         {
+            Main.MainManagers.dialogUIManager.SetDialogObject(dialogObject);
+            Dialog dialog = dialogObject.dialog;
+
             int numBlock = 0;
             while (numBlock < dialog.CountBlocks())
             {
                 next_message_flag = false;
                 Main.MainManagers.dialogUIManager.ProcessNextMessage(dialog, numBlock);
-
                 if (dialog.GetMessageBlock(numBlock).canSkip)
                 {
                     if (dialog.GetMessageBlock(numBlock).autoskip)
@@ -110,7 +110,21 @@ namespace PlayerSystem.DialogSystem
                     }
                 }
 
-                Main.MainManagers.dialogUIManager.PlayEndAnimationInBlock(dialog.GetMessageBlock(numBlock));
+                MessageBlock messageBlock = dialog.GetMessageBlock(numBlock);
+                if (messageBlock.person_tag != "player")
+                {
+                    foreach (CanvasForPerson canvasForPerson in dialogObject.canvases)
+                    {
+                        if (canvasForPerson.person_tag == messageBlock.person_tag)
+                        {
+                            Main.MainManagers.dialogUIManager.PlayAnimationEndText(canvasForPerson, messageBlock.endEffects, dialog.GetMessage(numBlock));
+                            break;
+                        }
+                    }
+                }
+                else
+                    Main.MainManagers.dialogUIManager.PlayAnimationEndText(Main.MainControllers.playerController.dialogController.playerCanvas, messageBlock.endEffects, dialog.GetMessage(numBlock));
+
                 numBlock++;
             }
 
