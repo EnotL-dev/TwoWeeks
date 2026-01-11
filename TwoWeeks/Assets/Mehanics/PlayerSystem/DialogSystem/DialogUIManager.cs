@@ -16,247 +16,75 @@ namespace PlayerSystem.DialogSystem
      */
     public class DialogUIManager
     {
-        List<CanvasForPerson> personCanvases = null;
-        public void StartUpdateCanvases(List<CanvasForPerson> personCanvases)
+        DialogObject dialogObject;
+        public void SetDialogObject(DialogObject dialogObject) => this.dialogObject = dialogObject;
+
+        public void ProcessNextMessage(Dialog dialog, int numBlock)
         {
-            updating = true;
-            this.personCanvases = personCanvases;
-            Update().Forget();
+            PlaceText(dialog, numBlock);
         }
 
-        public void StopUpdateCanvases()
+        private void PlaceText(Dialog dialog, int numBlock)
         {
-            updating = false;
-        }
-
-        bool updating = false;
-        private async UniTask Update()
-        {
-            while (updating)
+            DialogController dialogController = Main.MainControllers.playerController.dialogController;
+            MessageBlock mesBlock = dialog.GetMessageBlock(numBlock);
+            if (mesBlock.person_tag != "player")
             {
-                await UniTask.Delay(1000);
-            }
-        }
-
-        private async UniTask End_Animation_Text(int msDelay, TextEffect animatingTextUI) //запускается только с одного ТЕКСТА по сути | animatingTextUI - ЭТО СТАРТОВЫЙ ТЕКСТ |
-        {
-            Debug.Log("Next message");
-            Main.MainControllers.playerController.dialogController.textStart_MainUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.RemoveAllListeners(); //чтобы не было обработки повторной
-
-            foreach(CanvasForPerson canvasFromPool in pool_personCanvases)
-            {
-                try
+                foreach (CanvasForPerson canvasForPerson in dialogObject.canvases)
                 {
-                    if (canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>() == animatingTextUI) //animatingTextUI - ЭТО СТАРТОВЫЙ ТЕКСТ 
+                    if (canvasForPerson.person_tag == mesBlock.person_tag)
                     {
-                        canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.RemoveAllListeners(); //на всякий
-                        canvasFromPool.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.RemoveAllListeners(); //на всякий
-                        canvasFromPool.textEnd_PersonUI.GetComponent<TextEffect>().StopAllEffects();
-
-                        canvasFromPool.textEnd_PersonUI.text = canvasFromPool.textStart_PersonUI.text;
-                        canvasFromPool.textStart_PersonUI.text = "";
-
-                        canvasFromPool.textEnd_PersonUI.GetComponent<TextEffect>().Refresh();
-                        break;
-                    }
-                } catch { }
-            }
-
-            await UniTask.Delay(msDelay);
-
-            Main.MainManagers.dialogManager.Set_next_message_flag(true);
-        }
-
-        Dictionary<string, Action> PlayEndAnimationTextHandler = new Dictionary<string, Action>(); //Подписка на установку анимации окончания
-        public void PlayEndAnimationInBlock(MessageBlock messageBlock)
-        {
-            PlayEndAnimationTextHandler[messageBlock.person_tag]?.Invoke();
-            PlayEndAnimationTextHandler[messageBlock.person_tag] = null;
-        }
-
-        List<CanvasForPerson> pool_personCanvases = new List<CanvasForPerson>();
-        private void ProcessWithPersonPool(Dialog dialog, int numBlock, string person_tag)
-        {
-            List<GlobalTextEffectEntry> endEffects = dialog.GetMessageBlock(numBlock).endEffects;
-            if (endEffects != null && endEffects.Count > 0) PlayEndAnimationTextHandler[person_tag] = () => AnimateTextEffectEnd(endEffects, dialog.GetMessage(numBlock), person_tag); //Подписка на окончание анимации
-
-            PlacementNewMessageInCanvase(Main.MainControllers.playerController.dialogController.textStart_MainUI, dialog, numBlock, true);
-            AnimateTextEffectStart(dialog, numBlock, Main.MainControllers.playerController.dialogController.textStart_MainUI.GetComponent<TextEffect>());
-            Main.MainControllers.playerController.dialogController.textStart_MainUI.GetComponent<TextEffect>().Refresh(); //Не обновишь - не будет анимации. и я рот ебал как это плагин работает
-
-            bool pool_empty_flag = true; //Если в пуле не было нужного канваса
-            foreach (CanvasForPerson canvasFromPool in pool_personCanvases)
-            {
-                if (canvasFromPool.person_tag == person_tag)
-                {
-                    if (person_tag != "player")
-                    {
-                        PlacementNewMessageInCanvase(canvasFromPool.textStart_PersonUI, dialog, numBlock, false);
-                        AnimateTextEffectStart(dialog, numBlock, canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>());
-                        canvasFromPool.textStart_PersonUI.GetComponent<TextEffect>().Refresh(); //Не обновишь - не будет анимации. и я рот ебал как это плагин работает
-                    }
-                    else
-                    {
-                        PlacementNewMessageInCanvase(Main.MainControllers.playerController.dialogController.textStart_HeadUI, dialog, numBlock, false);
-                        AnimateTextEffectStart(dialog, numBlock, Main.MainControllers.playerController.dialogController.textStart_HeadUI.GetComponent<TextEffect>());
-                        Main.MainControllers.playerController.dialogController.textStart_HeadUI.GetComponent<TextEffect>().Refresh(); //Не обновишь - не будет анимации. и я рот ебал как это плагин работает
-                    }
-
-                    pool_personCanvases.Remove(canvasFromPool);
-                    pool_empty_flag = false;
-                    break;
-                }
-            }
-
-            if (pool_empty_flag)
-            {
-                if (person_tag == "player") //Канвас игркоа обрабатываем И ДОБАВЛЯЕМ отдельно
-                {
-                    PlacementNewMessageInCanvase(Main.MainControllers.playerController.dialogController.textStart_HeadUI, dialog, numBlock, false);
-                    AnimateTextEffectStart(dialog, numBlock, Main.MainControllers.playerController.dialogController.textStart_HeadUI.GetComponent<TextEffect>());
-                    Main.MainControllers.playerController.dialogController.textStart_HeadUI.GetComponent<TextEffect>().Refresh(); //Не обновишь - не будет анимации. и я рот ебал как это плагин работает
-                    MoveHeadCanvasToCameraView();
-
-                    CanvasForPerson playerCanvas = new CanvasForPerson();
-                    playerCanvas.person_tag = "player"; //костыль ну да ладно
-                    pool_personCanvases.Add(playerCanvas);
-                }
-                else
-                {
-                    foreach (CanvasForPerson personCanvas in personCanvases)
-                    {
-                        if (personCanvas.person_tag == person_tag)
-                        {
-                            PlacementNewMessageInCanvase(personCanvas.textStart_PersonUI, dialog, numBlock, false);
-                            AnimateTextEffectStart(dialog, numBlock, personCanvas.textStart_PersonUI.GetComponent<TextEffect>());
-                            personCanvas.textStart_PersonUI.GetComponent<TextEffect>().Refresh(); //Не обновишь - не будет анимации. и я рот ебал как это плагин работает
-                            MovePersonCanvasToCameraView(personCanvas.person_transform, Main.MainControllers.playerController.dialogController.GetCamera().transform, personCanvas.canvasGroup);
-
-                            pool_personCanvases.Add(personCanvas);
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-
-        //########################## START ########################################
-        public void ProcessNextMessage(Dialog dialog, int numBlock) 
-        {
-            ProcessWithPersonPool(dialog, numBlock, dialog.GetMessageBlock(numBlock).person_tag);
-        }
-        //########################## START ########################################
-
-        private void PlacementNewMessageInCanvase(TextMeshProUGUI textMesh, Dialog dialog, int numBlock, bool withName)
-        {
-            string message = "";
-            string composite_message = ""; // with name
-            if (dialog.GetNamePerson(numBlock) != null || dialog.GetNamePerson(numBlock) != "")
-                composite_message += $"{dialog.GetNamePerson(numBlock)}: ";
-
-            if (dialog.GetMessage(numBlock) != null || dialog.GetMessage(numBlock) != "")
-                message += dialog.GetMessage(numBlock);
-
-            if(withName) textMesh.text = composite_message;
-            else textMesh.text = message;
-        }
-
-        private void AnimateTextEffectStart(Dialog dialog, int numBlock, TextEffect animatingTextUI)
-        {
-            animatingTextUI.StopAllEffects();
-            animatingTextUI.globalEffects = dialog.GetMessageBlock(numBlock).startEffects;
-            animatingTextUI.globalEffects[0].onEffectCompleted.AddListener(() => End_Animation_Text(dialog.GetMessageBlock(numBlock).msDelay_before_next_message, animatingTextUI).Forget());
-        }
-
-        private void AnimateTextEffectEnd(List<GlobalTextEffectEntry> endEffects, string fillingtext, string person_tag) //Сюда подписка, поэтому анимируем конец для всего
-        {
-            Main.MainControllers.playerController.dialogController.textEnd_MainUI.text = fillingtext;
-            Main.MainControllers.playerController.dialogController.textEnd_MainUI.GetComponent<TextEffect>().globalEffects = endEffects;
-            Main.MainControllers.playerController.dialogController.textEnd_MainUI.GetComponent<TextEffect>().Refresh();
-
-            if (person_tag != "player")
-            {
-                foreach (CanvasForPerson canvas in personCanvases)
-                {
-                    if (canvas.person_tag == person_tag)
-                    {
-                        canvas.textEnd_PersonUI.text = fillingtext;
-                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects = endEffects;
-                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.AddListener(() => ResetEndTextAfterEndAnimation(person_tag));
-                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().Refresh();
-
+                        MovePersonCanvasToCameraView(canvasForPerson.person_transform, dialogController.GetCamera().transform, canvasForPerson.canvasGroup);
+                        canvasForPerson.textStart_PersonUI.text = dialog.GetMessage(numBlock);
+                        PlayAnimationStartText(canvasForPerson, mesBlock.startEffects, mesBlock.msDelay_before_next_message);
                         break;
                     }
                 }
             }
             else
             {
-                Main.MainControllers.playerController.dialogController.textEnd_HeadUI.text = fillingtext;
-                Main.MainControllers.playerController.dialogController.textEnd_HeadUI.GetComponent<TextEffect>().globalEffects = endEffects;
-                Main.MainControllers.playerController.dialogController.textEnd_HeadUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.AddListener(() => ResetEndTextAfterEndAnimation(person_tag));
-                Main.MainControllers.playerController.dialogController.textEnd_HeadUI.GetComponent<TextEffect>().Refresh();
+                MoveHeadCanvasToCameraView();
+                dialogController.playerCanvas.textStart_PersonUI.text = dialog.GetMessage(numBlock);
+                PlayAnimationStartText(dialogController.playerCanvas, mesBlock.startEffects, mesBlock.msDelay_before_next_message);
             }
         }
 
-        private void ResetEndTextAfterEndAnimation(string person_tag)
+        private async UniTask AcceptNextMessageInManager(TextEffect textEffect, int delay)
         {
-            Main.MainControllers.playerController.dialogController.textEnd_MainUI.text = " ";
-            Main.MainControllers.playerController.dialogController.textEnd_MainUI.GetComponent<TextEffect>().Refresh();
-
-            if (person_tag != "player")
-            {
-                foreach (CanvasForPerson canvas in personCanvases)
-                {
-                    if (canvas.person_tag == person_tag)
-                    {
-                        canvas.textEnd_PersonUI.text = "";
-                        canvas.textEnd_PersonUI.GetComponent<TextEffect>().Refresh();
-
-                        break;
-                    }
-                }
-            }
-            else
-            {
-                Main.MainControllers.playerController.dialogController.textEnd_HeadUI.text = " ";
-                Main.MainControllers.playerController.dialogController.textEnd_HeadUI.GetComponent<TextEffect>().Refresh();
-            }
+            await UniTask.Delay(delay);
+            textEffect.globalEffects[0].onEffectCompleted.AddListener(() => Main.MainManagers.dialogManager.Set_next_message_flag(true));
         }
 
-        #region Fade
-        bool InDialog => Main.MainManagers.dialogManager.InDialog;
-        private async UniTask FadeIn(CanvasGroup canvasGroup, float duration = 0.6f)
+        private void PlayAnimationStartText(CanvasForPerson canvasForPerson, List<GlobalTextEffectEntry> effects, int delayMes)
         {
-            canvasGroup.alpha = 0f;
+            canvasForPerson.textEnd_PersonUI.text = " ";
+            canvasForPerson.textEnd_PersonUI.GetComponent<TextEffect>().Refresh(); //♿♿
 
-            float elapsed = 0f;
-            while (elapsed < duration && InDialog)
-            {
-                canvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
-                elapsed += Time.deltaTime;
-                await UniTask.Yield();
-            }
-
-            if (InDialog)
-                canvasGroup.alpha = 1f;
+            canvasForPerson.textStart_PersonUI.GetComponent<TextEffect>().StopAllEffects();
+            canvasForPerson.textStart_PersonUI.GetComponent<TextEffect>().globalEffects = effects;
+            canvasForPerson.textStart_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.AddListener(() => AcceptNextMessageInManager(canvasForPerson.textStart_PersonUI.GetComponent<TextEffect>(), delayMes).Forget());
+            canvasForPerson.textStart_PersonUI.GetComponent<TextEffect>().Refresh(); //♿♿
         }
 
-        private async UniTask FadeOut(CanvasGroup canvasGroup, float duration = 0.6f)
+        public void PlayAnimationEndText(CanvasForPerson canvasForPerson, List<GlobalTextEffectEntry> effects, string finalText) //Invoke from Manager
         {
-            float startAlpha = canvasGroup.alpha;
-            float elapsed = 0f;
+            canvasForPerson.textStart_PersonUI.text = " ";
+            canvasForPerson.textStart_PersonUI.GetComponent<TextEffect>().Refresh(); //♿♿
 
-            while (elapsed < duration && !InDialog)
-            {
-                canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, elapsed / duration);
-                elapsed += Time.deltaTime;
-                await UniTask.Yield();
-            }
-
-            if (!InDialog)
-                canvasGroup.alpha = 0f;
+            canvasForPerson.textEnd_PersonUI.text = finalText;
+            canvasForPerson.textEnd_PersonUI.GetComponent<TextEffect>().StopAllEffects();
+            canvasForPerson.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects = effects;
+            canvasForPerson.textEnd_PersonUI.GetComponent<TextEffect>().globalEffects[0].onEffectCompleted.AddListener(() => ClearThisTextAction(canvasForPerson.textEnd_PersonUI)); //В конце вызовется очистка
+            canvasForPerson.textEnd_PersonUI.GetComponent<TextEffect>().Refresh(); //♿♿
         }
-        #endregion Fade
+
+        private void ClearThisTextAction(TextMeshProUGUI textMeshToClear)
+        {
+            textMeshToClear.text = " ";
+            textMeshToClear.GetComponent<TextEffect>().StopAllEffects();
+            textMeshToClear.GetComponent<TextEffect>().globalEffects = null;
+            textMeshToClear.GetComponent<TextEffect>().Refresh(); //♿♿
+        }
 
         Camera _camera => Main.MainControllers.playerController.dialogController.GetCamera();
 
@@ -266,12 +94,8 @@ namespace PlayerSystem.DialogSystem
         private float moveDistance = 1f; //отодвигает текст на такую дистанцию от игрока
         private float minDistanceToWall = 0.5f; //сдвигает от стены текст на такое расстояние
 
-        private CanvasGroup canvasGroup_MainUI => Main.MainControllers.playerController.dialogController.canvasGroup_MainUI;
-        private TextMeshProUGUI textStart_MainUI => Main.MainControllers.playerController.dialogController.textStart_MainUI;
-        private TextMeshProUGUI textEnd_MainUI => Main.MainControllers.playerController.dialogController.textEnd_MainUI;
-
-        private TextMeshProUGUI textStart_HeadUI => Main.MainControllers.playerController.dialogController.textStart_HeadUI;
-        private TextMeshProUGUI textEnd_HeadUI => Main.MainControllers.playerController.dialogController.textEnd_HeadUI;
+        private TextMeshProUGUI textStart_HeadUI => Main.MainControllers.playerController.dialogController.playerCanvas.textStart_PersonUI;
+        private TextMeshProUGUI textEnd_HeadUI => Main.MainControllers.playerController.dialogController.playerCanvas.textEnd_PersonUI;
 
         Transform headTransform => _camera.transform;
 
