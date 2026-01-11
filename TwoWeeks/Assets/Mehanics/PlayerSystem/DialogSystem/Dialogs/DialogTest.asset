@@ -15,7 +15,7 @@ MonoBehaviour:
   lockPlayer: 0
   blockMes:
   - autoskip: 0
-    canSkip: 1
+    canSkip: 0
     msDelay_before_next_message: 2000
     endEffects:
     - triggerWhen: 0

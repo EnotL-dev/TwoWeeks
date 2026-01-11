@@ -12057,9 +12057,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2375521338192762903, guid: e9493a28ae1ea2149a3362fe7ad4e643, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.9647059
+      objectReference: {fileID: 0}
     - target: {fileID: 4635286065610292553, guid: e9493a28ae1ea2149a3362fe7ad4e643, type: 3}
       propertyPath: m_Name
       value: DialogCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 6952841668264059346, guid: e9493a28ae1ea2149a3362fe7ad4e643, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.9647059
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,9 +14,7 @@ namespace PlayerSystem.DialogSystem
         public TextMeshProUGUI textStart_MainUI;
         public TextMeshProUGUI textEnd_MainUI;
         [Header("Head UI")]
-        public CanvasGroup prefabHeadUI;
-        [HideInInspector] public TextMeshProUGUI textStart_HeadUI;
-        [HideInInspector] public TextMeshProUGUI textEnd_HeadUI;
+        public CanvasForPerson playerCanvas;
 
         private Camera _camera;
 
@@ -38,8 +36,6 @@ namespace PlayerSystem.DialogSystem
         private void Start()
         {
             _camera = GetComponent<Camera>();
-            textStart_HeadUI = Instantiate(prefabHeadUI).GetComponentInChildren<TextMeshProUGUI>();
-            textEnd_HeadUI = Instantiate(prefabHeadUI).GetComponentInChildren<TextMeshProUGUI>();
         }
     }
 }
