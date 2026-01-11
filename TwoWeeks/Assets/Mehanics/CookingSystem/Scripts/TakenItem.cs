@@ -12,6 +12,19 @@ namespace MiniGames
 
         public void Take()
         {
+            if (Main.MainControllers.playerController.itemHolder.Item != null)
+            {
+                if (Main.MainControllers.playerController.itemHolder.Item.item == _itemObject.item)
+                {
+                    var old = Main.MainControllers.playerController.itemHolder.Extract();
+                    Destroy(old.gameObject);
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
             var instance = Instantiate(_itemObject.item.Prefab, transform.position, Quaternion.identity);
             Main.MainControllers.playerController.itemHolder.Item = instance;
             instance.transform.parent = Main.MainControllers.playerController.itemHolder.Target;
