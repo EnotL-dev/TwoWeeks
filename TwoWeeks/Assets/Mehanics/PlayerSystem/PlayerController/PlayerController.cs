@@ -18,6 +18,8 @@ namespace PlayerSystem
         public InteractionController interactionController;
         public DialogController dialogController;
         public QuestController questController;
+        [Header("Items")]
+        public ItemHolder itemHolder;
 
         public void Awake()
         {
