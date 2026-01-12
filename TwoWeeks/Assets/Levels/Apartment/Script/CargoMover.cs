@@ -23,6 +23,14 @@ namespace Environment
             _isOpen = !_isOpen;
         }
 
+        public void Close()
+        {
+            if (_coroutine != null)
+                StopCoroutine(_coroutine);
+            if (_isOpen)
+                _coroutine = StartCoroutine(OpenClose(_closed));
+        }
+
         private void Start()
         {
             _closed = transform.position;

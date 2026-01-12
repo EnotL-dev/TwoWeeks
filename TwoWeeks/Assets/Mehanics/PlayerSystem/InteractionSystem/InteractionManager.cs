@@ -6,6 +6,8 @@ namespace InteractionSystem
     {
         public void ProcessInteraction(InteractableObject interactable)
         {
+            if (!interactable.enabled)
+                return;
             if(interactable is DialogObject d_obj)
             {
                 Main.MainManagers.dialogManager.StartDialog(d_obj);
@@ -17,7 +19,9 @@ namespace InteractionSystem
         }
 
         public void OnPointerEnter(InteractableObject interactable)
-        {   
+        {
+            if (!interactable.enabled)
+                return;
             if (interactable is ItemObject i_obj)
             {
                 ItemPointerEnter(i_obj);
@@ -26,6 +30,8 @@ namespace InteractionSystem
 
         public void OnPointerExit(InteractableObject interactable)
         {
+            if (!interactable.enabled)
+                return;
             if (interactable is ItemObject i_obj)
             {
                 ItemPointerExit(i_obj);

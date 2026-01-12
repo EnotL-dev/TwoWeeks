@@ -20,12 +20,10 @@ namespace Environment
             {
                 if (transform.InverseTransformPoint(character.transform.position).x > 0)
                 {
-                    Debug.Log($"In {transform.InverseTransformPoint(character.transform.position)}");
                     Toggle(_openRotationIn, false);
                 }
                 else if (transform.InverseTransformPoint(character.transform.position).x < 0)
                 {
-                    Debug.Log($"Out {transform.InverseTransformPoint(character.transform.position)}");
                     Toggle(_openRotationOut, false);
                 }
             }
