@@ -20,6 +20,7 @@ namespace PlayerSystem.DialogSystem
         public string person_tag = "1";
         [SerializeField]
         public List<KeyValueLanguage> name_person;
+        public string tagEventEmote = "nothing";
         [SerializeField]
         public List<KeyValueLanguageArea> message;
     }

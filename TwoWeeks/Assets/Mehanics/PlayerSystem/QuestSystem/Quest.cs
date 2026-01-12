@@ -10,6 +10,12 @@ namespace PlayerSystem.QuestSystem
     [CreateAssetMenu(fileName = "new quest", menuName = "Quest")]
     public class Quest : ScriptableObject
     {
-        public string description = "";
+        public List<KeyValueLanguage> description;
+        private LanguageIndex language => Main.MainManagers.settingsManager.languageIndex;
+
+        public string GetDescription()
+        {
+            return description.Find(x => x.key == language).value;
+        }
     }
 }

@@ -6,9 +6,18 @@ using UnityEngine.Events;
 
 namespace InteractionSystem
 {
+    [System.Serializable]
+    public class EmoteEvents
+    {
+        public string tagEvent;
+        public UnityEvent eventEmote;
+    }
+
     public class DialogObject : InteractableObject
     {
         public Dialog dialog;
+        [Space(5)]
+        [SerializeField] public List<EmoteEvents> emoteEvents = new List<EmoteEvents>();
         [Space(5)]
         public UnityEvent DialogStartedEvents;
         [Space(5)]
