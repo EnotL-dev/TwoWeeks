@@ -181,7 +181,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6582974807811006356}
-  m_Layer: 0
+  - component: {fileID: 5488226093964092867}
+  - component: {fileID: 7132917456011172278}
+  - component: {fileID: 2002796506753271276}
+  - component: {fileID: 5561791219226719391}
+  m_Layer: 10
   m_Name: Egg Package
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,6 +218,124 @@ Transform:
   - {fileID: 3905569022257462794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5488226093964092867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105359245885395283}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: f8678a9c8a37426418792de13dc2ee59, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7132917456011172278}
+        m_TargetAssemblyTypeName: MiniGames.TakenItem, Assembly-CSharp
+        m_MethodName: Take
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2002796506753271276}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2002796506753271276}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7132917456011172278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105359245885395283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcff42fcdf65eb0458c414824f8f00c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offsetPosition: {x: 0, y: 0, z: 0}
+  _offsetRotation: {x: 0, y: 0, z: 0}
+  _hideAfter: 0
+--- !u!114 &2002796506753271276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105359245885395283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 9164593787819445353}
+  - {fileID: 436854204239438933}
+  - {fileID: 2002001586939730659}
+  - {fileID: 3194567696046255002}
+  - {fileID: 2134430191614459435}
+  - {fileID: 477464788639838314}
+  - {fileID: 61310427418901785}
+  - {fileID: 38619289399643162}
+  - {fileID: 3968694957274175432}
+  _parameterName: _Enable
+--- !u!65 &5561791219226719391
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105359245885395283}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.2546389, y: 0.27555463, z: 0.29456905}
+  m_Center: {x: 0, y: 0.12834664, z: 0.021866456}
 --- !u!1001 &131454910837084342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,6 +348,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0785
@@ -271,6 +401,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &3968694957274175432 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 131454910837084342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8862496829023149335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -288,6 +423,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0744
@@ -333,6 +476,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &3194567696046255002 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 1915653708698135780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7042266992258261317 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -350,6 +498,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0017
@@ -395,6 +551,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &2134430191614459435 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 3125395274904025429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5796500039245837556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -412,6 +573,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0744
@@ -457,6 +626,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &2002001586939730659 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 3244895572751375773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6207863774675390524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -474,6 +648,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0745
@@ -519,6 +701,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &477464788639838314 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 3486046905521714964}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5426276053891365557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -536,6 +723,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0744
@@ -581,6 +776,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &436854204239438933 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 3517489529987081003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5475900464645451402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -598,6 +798,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -643,6 +851,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &61310427418901785 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 3898277796917443175}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5564086710076307398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -660,6 +873,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0744
@@ -705,6 +926,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+--- !u!23 &38619289399643162 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 3911818867860441956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5577566208231835333 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
@@ -722,6 +948,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Egg
       objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -770,5 +1004,10 @@ PrefabInstance:
 --- !u!4 &3657318301702260406 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8876291823738260897, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
+  m_PrefabInstance: {fileID: 5327630801601301271}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &9164593787819445353 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3945336354583005054, guid: 70b86100f2f9bc14884282db486c4cd4, type: 3}
   m_PrefabInstance: {fileID: 5327630801601301271}
   m_PrefabAsset: {fileID: 0}

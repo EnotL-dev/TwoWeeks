@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 512456907301747662}
   - component: {fileID: 4973716009643644747}
   - component: {fileID: 279880372435024398}
+  - component: {fileID: 779342724190765326}
   m_Layer: 0
   m_Name: Potato
   m_TagString: Untagged
@@ -86,3 +87,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &779342724190765326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444222740483166151}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 7de36f05add2875498febefe8ea2445d, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls: []

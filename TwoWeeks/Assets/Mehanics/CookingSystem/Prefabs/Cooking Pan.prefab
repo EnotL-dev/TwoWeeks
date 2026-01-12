@@ -661,6 +661,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8743632036343650375}
+  - component: {fileID: 5477626916132944156}
   m_Layer: 0
   m_Name: Cooking Pan
   m_TagString: Untagged
@@ -685,6 +686,22 @@ Transform:
   - {fileID: 7095919218433502056}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5477626916132944156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8669644785966208748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98222cc27b80ed9439842074ff623b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sliderBoarders: 0.225
+  _fillingImage: {fileID: 5650027983048036001}
+  _arrow: {fileID: 4586393972463058349}
+  _minigame: {fileID: 0}
 --- !u!1001 &2702913294838209555
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1026,6 +1043,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 7484123387642581425, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484123387642581425, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
       propertyPath: OnPointerExit.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1076,7 +1097,7 @@ PrefabInstance:
     - target: {fileID: 7484123387642581425, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
       propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 9118612794827196439}
+      objectReference: {fileID: 6341565187616088960}
     - target: {fileID: 7484123387642581425, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
       propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1095,7 +1116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7484123387642581425, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
       propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MiniGames.PlacerItem, Assembly-CSharp
+      value: MiniGames.IngredientPlacerItem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7484123387642581425, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
       propertyPath: OnPointerExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -1124,7 +1145,7 @@ PrefabInstance:
       addedObject: {fileID: 6218952385379270856}
     - targetCorrespondingSourceObject: {fileID: 2910791302475384796, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9118612794827196439}
+      addedObject: {fileID: 6341565187616088960}
     - targetCorrespondingSourceObject: {fileID: 2910791302475384796, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4482356912806697921}
@@ -1165,7 +1186,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.70205474, y: 0.075715974, z: 0.41762602}
   m_Center: {x: 0.1422149, y: 0.03786049, z: -0.0000018030405}
---- !u!114 &9118612794827196439
+--- !u!114 &6341565187616088960
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1174,10 +1195,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5050850757600773362}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 668492165fb3d8e4f9ce2eadad601a3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c3bc849e984e6a418b5b7d41c92d0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnPlace:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPlaceIngredient:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &4482356912806697921

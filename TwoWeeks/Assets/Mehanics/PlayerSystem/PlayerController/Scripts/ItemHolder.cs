@@ -1,5 +1,6 @@
 using InteractionSystem;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PlayerSystem
 {
@@ -13,12 +14,22 @@ namespace PlayerSystem
                     collider.enabled = false;
                 }
                 _item = value;
+                if (value!= null)
+                {
+                    OnGetInHands?.Invoke();
+                }
+                else
+                {
+                    OnGetOutHands?.Invoke();
+                }
             }
         }
         private ItemObject _item;
         public Transform Target => _target;
         [SerializeField] private Transform _target;
         [SerializeField] private Camera _camera;
+        [SerializeField] private UnityEvent OnGetInHands;
+        [SerializeField] private UnityEvent OnGetOutHands;
 
         public ItemObject Extract()
         {

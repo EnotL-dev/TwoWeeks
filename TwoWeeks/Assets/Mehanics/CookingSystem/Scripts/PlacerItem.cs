@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ namespace MiniGames
     {
         [SerializeField] private UnityEvent OnPlace;
 
-        public void Place()
+        public virtual void Place()
         {
             var item = Main.MainControllers.playerController.itemHolder.Extract();
             if (item == null)

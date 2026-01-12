@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13d91e91d3c1aab42b6050b79021ae5d, type: 3}
-  m_Name: Dumplings
+  m_Name: Mayonnaise
   m_EditorClassIdentifier: 
   name_item: []
   description_item: []
-  _prefab: {fileID: 9179633951326881174, guid: 2d6afb55f69ffd54db8a00191241483a, type: 3}
-  _weight: 3
-  _points: 5
+  _prefab: {fileID: 8824633427388750293, guid: f6a928a54dbd1f546b2887fd4fe51af3, type: 3}
+  _weight: 1
+  _points: -3

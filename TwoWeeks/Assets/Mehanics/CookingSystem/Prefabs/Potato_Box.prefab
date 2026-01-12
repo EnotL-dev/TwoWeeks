@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 9124274671314498265}
   - component: {fileID: 4465518521001934247}
   - component: {fileID: 7955136561259245482}
-  m_Layer: 0
+  - component: {fileID: 1159864872144981093}
+  - component: {fileID: 8086707344781719267}
+  - component: {fileID: 1685197643552557273}
+  - component: {fileID: 3912109152873333768}
+  m_Layer: 10
   m_Name: Potato_Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,6 +98,123 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1159864872144981093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585790604085245339}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: 7de36f05add2875498febefe8ea2445d, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8086707344781719267}
+        m_TargetAssemblyTypeName: MiniGames.TakenItem, Assembly-CSharp
+        m_MethodName: Take
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1685197643552557273}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Activate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1685197643552557273}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8086707344781719267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585790604085245339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcff42fcdf65eb0458c414824f8f00c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _offsetPosition: {x: 0, y: 0, z: 0}
+  _offsetRotation: {x: 0, y: 0, z: 0}
+  _hideAfter: 0
+--- !u!114 &1685197643552557273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585790604085245339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetRenderers:
+  - {fileID: 1531742059675023505}
+  - {fileID: 13195715081775180}
+  - {fileID: 4885702744940584348}
+  - {fileID: 7350111021963885550}
+  - {fileID: 368984221066774450}
+  - {fileID: 6535905828585638231}
+  - {fileID: 3737264020834552588}
+  - {fileID: 5703685080823832600}
+  _parameterName: _Enable
+--- !u!65 &3912109152873333768
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2585790604085245339}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.40751198, y: 0.22859544, z: 0.52451867}
+  m_Center: {x: 0, y: 0.11429772, z: 0}
 --- !u!1001 &273792523956539970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,6 +223,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato (1)
@@ -151,6 +280,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+--- !u!23 &13195715081775180 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 273792523956539970}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &346821212019370380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
@@ -164,6 +298,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato (5)
@@ -218,6 +360,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
   m_PrefabInstance: {fileID: 503471352007572924}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &368984221066774450 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 503471352007572924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631291521378779807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -226,6 +373,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato
@@ -280,6 +435,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
   m_PrefabInstance: {fileID: 1631291521378779807}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &1531742059675023505 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 1631291521378779807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3476559440493605122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -288,6 +448,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato (7)
@@ -337,6 +505,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+--- !u!23 &3737264020834552588 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 3476559440493605122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3973200387817376460 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
@@ -350,6 +523,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato (3)
@@ -399,6 +580,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+--- !u!23 &4885702744940584348 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 4625150043182229394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5130525361152990300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
@@ -412,6 +598,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato (2)
@@ -466,6 +660,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
   m_PrefabInstance: {fileID: 5532068423697488406}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &5703685080823832600 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 5532068423697488406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6437444934883046233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -474,6 +673,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato (6)
@@ -523,6 +730,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+--- !u!23 &6535905828585638231 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 6437444934883046233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6794518794514270359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
@@ -536,6 +748,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9124274671314498265}
     m_Modifications:
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b150e77064110542859fa80df1c771b, type: 2}
     - target: {fileID: 444222740483166151, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
       propertyPath: m_Name
       value: Potato (4)
@@ -588,5 +808,10 @@ PrefabInstance:
 --- !u!4 &7133172296040757806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 512456907301747662, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
+  m_PrefabInstance: {fileID: 7341574101183545824}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7350111021963885550 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 279880372435024398, guid: 3d5544386e04cfd46aa1565c17a2f8ec, type: 3}
   m_PrefabInstance: {fileID: 7341574101183545824}
   m_PrefabAsset: {fileID: 0}

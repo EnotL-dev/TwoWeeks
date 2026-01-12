@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8876291823738260897}
   - component: {fileID: 9137666339098398812}
   - component: {fileID: 3945336354583005054}
+  - component: {fileID: -1365339265455814457}
   m_Layer: 0
   m_Name: Egg
   m_TagString: Untagged
@@ -86,3 +87,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-1365339265455814457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111905151311574668}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ForcedCall: 0
+  item: {fileID: 11400000, guid: f8678a9c8a37426418792de13dc2ee59, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls: []
