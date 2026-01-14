@@ -4,6 +4,7 @@ using PlayerSystem.QuestSystem;
 using ReactiveVariables;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace MiniGames
 {
@@ -17,6 +18,8 @@ namespace MiniGames
         [SerializeField] private int _startWeight;
         [SerializeField] private int _maxPoints;
         [SerializeField] private int _maxWeight;
+        [Space]
+        [SerializeField] private UnityEvent winEvents;
         [Space]
         [SerializeField] private QuestController _questController;
         [SerializeField] private Quest _questPan;
@@ -56,6 +59,8 @@ namespace MiniGames
                 _questController.CompleteQuest(_questIngridients);
                 BlockCabinets();
                 BlockIngredients();
+
+                winEvents?.Invoke();
             }
         }
 
