@@ -22,6 +22,16 @@ namespace PlayerSystem.DialogSystem
         public void ProcessNextMessage(Dialog dialog, int numBlock)
         {
             PlaceText(dialog, numBlock);
+
+            MessageBlock mesBlock = dialog.GetMessageBlock(numBlock);
+            foreach(EmoteEvents emoteEvent in dialogObject.emoteEvents)
+            {
+                if(emoteEvent.tagEvent == mesBlock.tagEventEmote)
+                {
+                    emoteEvent.eventEmote.Invoke();
+                    break;
+                }
+            }
         }
 
         private void PlaceText(Dialog dialog, int numBlock)

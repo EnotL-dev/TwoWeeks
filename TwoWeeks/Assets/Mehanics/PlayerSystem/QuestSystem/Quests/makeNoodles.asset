@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14e179cf4f110394cb64145283c3f6ae, type: 3}
-  m_Name: Cooking_Ingridients
+  m_Name: makeNoodles
   m_EditorClassIdentifier: 
   description:
   - key: 0
-    value: Find the ingredients for the noodles
+    value: Cook noodles
   - key: 1
-    value: "\u041D\u0430\u0439\u0434\u0438 \u0438\u043D\u0433\u0440\u0438\u0434\u0438\u0435\u043D\u0442\u044B
-      \u0434\u043B\u044F \u043F\u0430\u0441\u0442\u044B"
+    value: "\u041F\u0440\u0438\u0433\u043E\u0442\u043E\u0432\u0438\u0442\u044C \u043F\u0430\u0441\u0442\u0443"

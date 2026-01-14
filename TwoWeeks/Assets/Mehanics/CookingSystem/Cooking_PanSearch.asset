@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14e179cf4f110394cb64145283c3f6ae, type: 3}
   m_Name: Cooking_PanSearch
   m_EditorClassIdentifier: 
-  description: "\u041D\u0430\u0439\u0434\u0438 \u043D\u0430 \u043A\u0443\u0445\u043D\u0435
-    \u0441\u043A\u043E\u0432\u043E\u0440\u043E\u0434\u043A\u0443 \u0438 \u043F\u043E\u0441\u0442\u0430\u0432\u044C
-    \u043D\u0430 \u043F\u043B\u0438\u0442\u0443."
+  description:
+  - key: 0
+    value: Find a frying pan in the kitchen
+  - key: 1
+    value: "\u041D\u0430\u0439\u0434\u0438 \u043D\u0430 \u043A\u0443\u0445\u043D\u0435
+      \u0441\u043A\u043E\u0432\u043E\u0440\u043E\u0434\u043A\u0443"

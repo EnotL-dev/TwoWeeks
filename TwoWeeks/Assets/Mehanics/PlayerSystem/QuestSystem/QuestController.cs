@@ -28,7 +28,7 @@ namespace PlayerSystem.QuestSystem
         public void AddQuest(Quest quest)
         {
             GameObject questObj = Instantiate(textPrefab, panelQuests.transform).gameObject;
-            questObj.GetComponentInChildren<TextMeshProUGUI>().text = quest.description;
+            questObj.GetComponentInChildren<TextMeshProUGUI>().text = quest.GetDescription();
             questPull.Add(new QuestPair(questObj, quest));
 
             CheckMaxPull();
