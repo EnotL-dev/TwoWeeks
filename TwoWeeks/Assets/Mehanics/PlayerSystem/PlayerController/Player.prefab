@@ -601,6 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 153010943432231838}
+  - component: {fileID: 9049759603713111804}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -624,6 +625,27 @@ Transform:
   - {fileID: 1012831206000581396}
   m_Father: {fileID: 5481443702324045390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9049759603713111804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994767464741482308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f45bb77f72db70443aaf9360fd1cc1b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _phoneView: {fileID: 1449130347130968112}
+  _camera: {fileID: 3581657235895293143}
+  _debug: 1
+  _countToEnd: 3
+  _maxDistance: 4
+  _flashDuration: 0.1
+  _photoShowingDuration: 0.5
+  _waitBeforeShowingDuration: 2
+  _renderer: {fileID: 4378481948040599889}
 --- !u!1 &3129567416800358190
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,7 +1011,6 @@ GameObject:
   - component: {fileID: 3064217438988861462}
   - component: {fileID: 5786457377754198583}
   - component: {fileID: 8516167309095489284}
-  - component: {fileID: 1142609637961624345}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1052,20 +1073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelQuests: {fileID: 9023277860972550468}
   textPrefab: {fileID: 6876674531093444196, guid: 068ffaa187938a74d9d702fc1d790b0b, type: 3}
---- !u!114 &1142609637961624345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4493804215330801359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f45bb77f72db70443aaf9360fd1cc1b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _phoneView: {fileID: 1449130347130968112}
-  _debug: 1
 --- !u!1 &4870564487287551750
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,7 +2203,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 981441123229550599, guid: 05722c1a33fd7e44894b587d78a59251, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2209,5 +2217,15 @@ Transform:
 --- !u!1 &1449130347130968112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5942240534181419701, guid: 05722c1a33fd7e44894b587d78a59251, type: 3}
+  m_PrefabInstance: {fileID: 5074233067438424709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &3581657235895293143 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8637858252367484498, guid: 05722c1a33fd7e44894b587d78a59251, type: 3}
+  m_PrefabInstance: {fileID: 5074233067438424709}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4378481948040599889 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8838369472271014868, guid: 05722c1a33fd7e44894b587d78a59251, type: 3}
   m_PrefabInstance: {fileID: 5074233067438424709}
   m_PrefabAsset: {fileID: 0}
