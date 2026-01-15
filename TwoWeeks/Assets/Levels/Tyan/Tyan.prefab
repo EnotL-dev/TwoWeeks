@@ -1213,6 +1213,7 @@ GameObject:
   - component: {fileID: 8297984552518155845}
   - component: {fileID: 8734202747836462184}
   - component: {fileID: 6254941429700688682}
+  - component: {fileID: 5402851269438762144}
   m_Layer: 0
   m_Name: Tyan
   m_TagString: Untagged
@@ -1230,8 +1231,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.4040918, y: 0, z: 11.607325}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5215892734229457732}
   - {fileID: 1779979659900069683}
@@ -1301,6 +1302,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _animator: {fileID: 7075835925722276256}
+  _bodyWeight: 0.3
+  _headWeight: 1
+  _eyesWeight: 0
+  _clampWeight: 0.5
 --- !u!114 &6254941429700688682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1318,6 +1323,21 @@ MonoBehaviour:
   _animator: {fileID: 7075835925722276256}
   _poseCount: 3
   _debug: 1
+--- !u!114 &5402851269438762144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582860332104556896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c1f21a71c039341870a3f29f12b24c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animation: {fileID: 6254941429700688682}
+  _emotion: {fileID: 8297984552518155845}
+  _ikControl: {fileID: 8734202747836462184}
 --- !u!1 &4863180912093339858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,6 +2852,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 630743398506050383}
+  - component: {fileID: 2157066313880053815}
   m_Layer: 0
   m_Name: Spine
   m_TagString: Untagged
@@ -2855,6 +2876,27 @@ Transform:
   - {fileID: 2398560051093502345}
   m_Father: {fileID: 6606217117603840377}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2157066313880053815
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277509188420611412}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.43574852, y: 1.5418698, z: 0.58225405}
+  m_Center: {x: -0.0013629956, y: -0.06644228, z: 0.070101045}
 --- !u!1 &8381578712423883354
 GameObject:
   m_ObjectHideFlags: 0
