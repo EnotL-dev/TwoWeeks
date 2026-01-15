@@ -36,6 +36,7 @@ namespace Tyan
         [Space]
         [SerializeField] private Animator _animator;
         [SerializeField] private string _browsParameterName;
+        [SerializeField] private bool _debug = false;
         private int _browsParameterId;
         private Coroutine _blinkingCoroutine;
         private Coroutine _speakingCoroutine;
@@ -44,6 +45,13 @@ namespace Tyan
 
         private void Update()
         {
+            DebugCheck();
+        }
+
+        private void DebugCheck()
+        {
+            if (!_debug)
+                return;
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 StartBlinking();
