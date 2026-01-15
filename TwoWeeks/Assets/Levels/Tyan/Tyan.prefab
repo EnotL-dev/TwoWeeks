@@ -246,7 +246,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: -3178576508544696699, guid: 03ab9b872b371134590e4021ceb4a74a, type: 3}
   m_Bones:
@@ -1212,6 +1212,7 @@ GameObject:
   - component: {fileID: 7075835925722276256}
   - component: {fileID: 8297984552518155845}
   - component: {fileID: 8734202747836462184}
+  - component: {fileID: 6254941429700688682}
   m_Layer: 0
   m_Name: Tyan
   m_TagString: Untagged
@@ -1285,6 +1286,7 @@ MonoBehaviour:
     _mouthCatClosed: {fileID: 5048497483671328765}
   _animator: {fileID: 7075835925722276256}
   _browsParameterName: BrowsSelector
+  _debug: 0
 --- !u!114 &8734202747836462184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1299,6 +1301,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
   _animator: {fileID: 7075835925722276256}
+--- !u!114 &6254941429700688682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4582860332104556896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffc18ecc846e73f4ba9bdc72d689e2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _photoPosesParameterName: PhotoPose
+  _poseSelectorParameterName: PoseSelector
+  _animator: {fileID: 7075835925722276256}
+  _poseCount: 3
+  _debug: 1
 --- !u!1 &4863180912093339858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1970,7 @@ SkinnedMeshRenderer:
   m_SortingOrder: 0
   serializedVersion: 2
   m_Quality: 0
-  m_UpdateWhenOffscreen: 0
+  m_UpdateWhenOffscreen: 1
   m_SkinnedMotionVectors: 1
   m_Mesh: {fileID: -7753533042031091692, guid: 03ab9b872b371134590e4021ceb4a74a, type: 3}
   m_Bones:
