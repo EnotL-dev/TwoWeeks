@@ -1,3 +1,5 @@
+using Environment;
+using InteractionSystem;
 using System;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +11,8 @@ namespace MiniGames
     public class IngredientPlacerItem : PlacerItem
     {
         [SerializeField] private IngredientEvent OnPlaceIngredient;
+        [SerializeField] private CanInteractEffect _interactEffect;
+        [SerializeField] private ItemObject _itemObject;
         private CookingIngredient _last;
 
         public override void Place()
@@ -20,8 +24,11 @@ namespace MiniGames
                 {
                     return;
                 }
-                OnPlaceIngredient?.Invoke(item as CookingIngredient);
                 _last = item as CookingIngredient;
+                CookingMinigame.Instance.AddIngredient(_last);
+                _interactEffect.Deactivate();
+                _itemObject.enabled = false;
+                OnPlaceIngredient?.Invoke(_last);
             }
             base.Place();
         }
