@@ -10,10 +10,12 @@ namespace MiniGames
 {
     public class CookingMinigame : MonoBehaviour
     {
+        public static CookingMinigame Instance { get; private set; }
         public int MaxPoints => _maxPoints;
         public int MaxWeight => _maxWeight;
         public ReactiveProperty<int> Points = new();
         public ReactiveProperty<int> Weight = new();
+        public ItemObject IngredientsCollector => _ingredientsCollector;
         [SerializeField] private int _startPoints;
         [SerializeField] private int _startWeight;
         [SerializeField] private int _maxPoints;
@@ -27,8 +29,8 @@ namespace MiniGames
         [SerializeField] private List<CargoMover> _cargo = new();
         [SerializeField] private List<Opener> _cabinets = new();
         [SerializeField] private List<ItemObject> _cookware = new();
-        //[SerializeField] private List<ItemObject> _dishes = new();
         [SerializeField] private List<ItemObject> _ingredients = new();
+        [SerializeField] private ItemObject _ingredientsCollector;
 
         public void AddIngredient(CookingIngredient ingredient)
         {
@@ -64,12 +66,9 @@ namespace MiniGames
             }
         }
 
-        private void Update()
+        private void Awake()
         {
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                StartMiniGame();
-            }
+            Instance = this;
         }
 
         private void Start()

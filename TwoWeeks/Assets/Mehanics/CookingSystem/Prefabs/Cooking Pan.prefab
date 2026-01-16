@@ -1150,6 +1150,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4482356912806697921}
   m_SourcePrefab: {fileID: 100100000, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
+--- !u!114 &694114909343453855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7484123387642581425, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
+  m_PrefabInstance: {fileID: 7961536503595205422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5050850757600773362}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &881913471912020832 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 7079694785718224974, guid: 7e2cb4d3818217d4e9361f843a1a4db0, type: 3}
@@ -1203,7 +1214,33 @@ MonoBehaviour:
       m_Calls: []
   OnPlaceIngredient:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5050850757600773362}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4482356912806697921}
+        m_TargetAssemblyTypeName: Environment.CanInteractEffect, Assembly-CSharp
+        m_MethodName: Deactivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _interactEffect: {fileID: 4482356912806697921}
+  _itemObject: {fileID: 694114909343453855}
 --- !u!114 &4482356912806697921
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -78121,6 +78121,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mayonnaise
       objectReference: {fileID: 0}
+    - target: {fileID: 1118150806779110044, guid: f6a928a54dbd1f546b2887fd4fe51af3, type: 3}
+      propertyPath: _cooking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6897929478773934018, guid: f6a928a54dbd1f546b2887fd4fe51af3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.040632844
@@ -78675,9 +78679,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2227324956533521241}
     m_Modifications:
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7286161880214012285}
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: InteractionSystem.ItemObject, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1159864872144981093, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: StartInteractedEvents.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2585790604085245339, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
       propertyPath: m_Name
       value: Potato_Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086707344781719267, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
+      propertyPath: _cooking
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9124274671314498265, guid: 7873d280b36033c48a641b9f384b1668, type: 3}
       propertyPath: m_LocalPosition.x
@@ -79514,6 +79554,7 @@ MonoBehaviour:
   _offsetPosition: {x: 0, y: 0, z: 0}
   _offsetRotation: {x: 0, y: 180, z: 0}
   _hideAfter: 0
+  _cooking: 1
 --- !u!114 &9059798037754769284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79861,6 +79902,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6579799337988989976}
     m_Modifications:
+    - target: {fileID: 2651868667086586019, guid: 581a489885ea84f4c9faaa3cef624408, type: 3}
+      propertyPath: _cooking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4944552606848973962, guid: 581a489885ea84f4c9faaa3cef624408, type: 3}
       propertyPath: m_Name
       value: Pasta
@@ -80087,6 +80132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3350867826697821495, guid: e5cdafb2a022c954da0eabb0f4789805, type: 3}
+      propertyPath: _cooking
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6844925721625745934, guid: e5cdafb2a022c954da0eabb0f4789805, type: 3}
       propertyPath: m_Name
       value: Ketchup
@@ -80236,6 +80285,10 @@ PrefabInstance:
     - target: {fileID: 711540677177505824, guid: 6a94b23d44e842240a8c9e7778c31f65, type: 3}
       propertyPath: m_Name
       value: Salt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1784835066160205994, guid: 6a94b23d44e842240a8c9e7778c31f65, type: 3}
+      propertyPath: _cooking
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7370099431335186634, guid: 6a94b23d44e842240a8c9e7778c31f65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -80622,6 +80675,7 @@ MonoBehaviour:
   _offsetPosition: {x: 0, y: 0, z: 0}
   _offsetRotation: {x: 0, y: 0, z: 0}
   _hideAfter: 1
+  _cooking: 0
 --- !u!114 &2520543242902795017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82265,6 +82319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7132917456011172278, guid: 2d482080a0d115c4bb4075395959980a, type: 3}
+      propertyPath: _cooking
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -82541,24 +82599,32 @@ PrefabInstance:
       value: QuestStartCooking
       objectReference: {fileID: 0}
     - target: {fileID: 6341565187616088960, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
+      propertyPath: _interactEffect
+      value: 
+      objectReference: {fileID: 5947249221978687523}
+    - target: {fileID: 6341565187616088960, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
       propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341565187616088960, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
+      propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6341565187616088960, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
-      propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5947249221978687523}
     - target: {fileID: 6341565187616088960, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
       propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: AddIngredient
+      value: Deactivate
       objectReference: {fileID: 0}
     - target: {fileID: 6341565187616088960, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
       propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MiniGames.CookingMinigame, Assembly-CSharp
+      value: Environment.CanInteractEffect, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6341565187616088960, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
-      propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: OnPlaceIngredient.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8669644785966208748, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
       propertyPath: m_Name
@@ -82619,6 +82685,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8743632036343650375, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
   m_PrefabInstance: {fileID: 7835234712504112098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5947249221978687523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4482356912806697921, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
+  m_PrefabInstance: {fileID: 7835234712504112098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b59711d84e090347b6735f56962cbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7286161880214012285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 694114909343453855, guid: d1ce4dbc60a847c478cb750e3188adb5, type: 3}
+  m_PrefabInstance: {fileID: 7835234712504112098}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7925606266405354099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82918,6 +83006,10 @@ PrefabInstance:
     - target: {fileID: 4064333917158714204, guid: 8c6a959a5a41b674d846608a3eb9116c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6462911147527392771, guid: 8c6a959a5a41b674d846608a3eb9116c, type: 3}
+      propertyPath: _cooking
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -83818,6 +83910,10 @@ PrefabInstance:
     - target: {fileID: 678272064158539816, guid: 1cda0600989018c45884d4d43fdd9bc0, type: 3}
       propertyPath: m_Name
       value: Milk Bottle
+      objectReference: {fileID: 0}
+    - target: {fileID: 757636328309045221, guid: 1cda0600989018c45884d4d43fdd9bc0, type: 3}
+      propertyPath: _cooking
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4152090191164774912, guid: 1cda0600989018c45884d4d43fdd9bc0, type: 3}
       propertyPath: m_LocalPosition.x
