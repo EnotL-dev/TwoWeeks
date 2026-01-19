@@ -8,6 +8,7 @@ namespace MiniGames
         [SerializeField] private Vector3 _offsetPosition;
         [SerializeField] private Vector3 _offsetRotation;
         [SerializeField] private bool _hideAfter = true;
+        [SerializeField] private bool _cooking = false;
         private ItemObject _itemObject;
 
         public void Take()
@@ -24,6 +25,10 @@ namespace MiniGames
                 {
                     return;
                 }
+            }
+            if (_cooking)
+            {
+                CookingMinigame.Instance.IngredientsCollector.enabled = true;
             }
             var instance = Instantiate(_itemObject.item.Prefab, transform.position, Quaternion.identity);
             Main.MainControllers.playerController.itemHolder.Item = instance;
