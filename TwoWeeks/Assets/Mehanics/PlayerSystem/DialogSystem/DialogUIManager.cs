@@ -133,7 +133,7 @@ namespace PlayerSystem.DialogSystem
         #region headUI
         private void MoveHeadCanvasToCameraView()
         {
-            Vector3 offset = new Vector3(0, -0.6f, 0);
+            Vector3 offset = new Vector3(0, -0.2f, 0);
             Vector3 cameraPos = headTransform.position + offset;
             Vector3 direction = headTransform.forward;
 
