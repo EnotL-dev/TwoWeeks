@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14e179cf4f110394cb64145283c3f6ae, type: 3}
-  m_Name: testQuest
+  m_Name: washUp
   m_EditorClassIdentifier: 
   description:
   - key: 0
-    value: 134
+    value: Wash up
   - key: 1
-    value: 324
+    value: "\u0423\u043C\u044B\u0442\u044C\u0441\u044F"

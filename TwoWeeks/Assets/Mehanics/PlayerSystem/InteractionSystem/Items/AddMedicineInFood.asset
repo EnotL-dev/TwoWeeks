@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e179cf4f110394cb64145283c3f6ae, type: 3}
-  m_Name: testQuest
+  m_Script: {fileID: 11500000, guid: 5314333bca78d4e4abcd732bd94a5152, type: 3}
+  m_Name: AddMedicineInFood
   m_EditorClassIdentifier: 
-  description:
+  name_item:
   - key: 0
-    value: 134
+    value: Add medicines to food
   - key: 1
-    value: 324
+    value: "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u043B\u0435\u043A\u0430\u0440\u0441\u0442\u0432\u0430"
+  description_item: []
+  _prefab: {fileID: 0}
