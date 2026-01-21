@@ -3,13 +3,14 @@ using System;
 using System.Collections;
 using Tyan;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PlayerSystem
 {
     public class PhonePhotoMode : MonoBehaviour
     {
-        public Action OnStart;
-        public Action OnStop;
+        [SerializeField] private UnityEvent OnStart;
+        [SerializeField] private UnityEvent OnStop;
 
         [SerializeField] private GameObject _phoneView;
         [SerializeField] private Camera _camera;
@@ -92,13 +93,13 @@ namespace PlayerSystem
         {
             if (_photing && !_flash)
             {
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E))
                 {
                     Ray ray = new Ray(_phoneView.transform.position, -_phoneView.transform.forward);
                     if (Physics.Raycast(ray, out RaycastHit hit))
                     {
-                        Debug.Log(hit.transform.root.gameObject);
-                        if (hit.transform.root.gameObject.TryGetComponent(out TyanRefs tyan))
+                        Debug.Log(hit.transform.gameObject);
+                        if (hit.transform.gameObject.tag == "Tyan")
                         {
                             AddPoint();
                             if (_activAction != null)
@@ -140,15 +141,15 @@ namespace PlayerSystem
             Debug.Log("Start photo showing");
             _shaderPhoto1.SetShaderParameter(false);
             yield return new WaitForSeconds(_photoShowingDuration);
-            yield return new WaitUntil(()=> Input.GetMouseButtonDown(0));
+            yield return new WaitUntil(()=> Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E));
             _shaderPhoto1.SetShaderParameter(true);
             _shaderPhoto2.SetShaderParameter(false);
             yield return new WaitForSeconds(_photoShowingDuration);
-            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E));
             _shaderPhoto2.SetShaderParameter(true);
             _shaderPhoto3.SetShaderParameter(false);
             yield return new WaitForSeconds(_photoShowingDuration);
-            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.E));
             OnStop?.Invoke();
             HidePhone();
             Debug.Log("End photo showing");
