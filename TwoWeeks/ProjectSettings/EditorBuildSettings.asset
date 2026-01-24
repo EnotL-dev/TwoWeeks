@@ -41,6 +41,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Day4/Home 4 (1).unity
     guid: d603890b5e3fe234cb11234d8297ad31
+  - enabled: 1
+    path: Assets/Scenes/Day4/Street 4 (1).unity
+    guid: 3c4f18a24e9691a42955d9d6cd0128f4
+  - enabled: 1
+    path: Assets/Scenes/Day4/Entrance 4 (1).unity
+    guid: d1972aae2ba52f642b68633d09ac9281
+  - enabled: 1
+    path: Assets/Scenes/Day4/Home 4 (2).unity
+    guid: 53bae66af8d5f1948bbb1f5d54553ee5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
