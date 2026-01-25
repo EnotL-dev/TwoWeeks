@@ -10902,31 +10902,35 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2406468097815473746, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9154921
+      value: 0.70301455
       objectReference: {fileID: 0}
     - target: {fileID: 2406468097815473746, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.098923825
+      value: 0.07596449
       objectReference: {fileID: 0}
     - target: {fileID: 2406468097815473746, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.38772792
+      value: 0.70301455
       objectReference: {fileID: 0}
     - target: {fileID: 2406468097815473746, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04189608
+      value: -0.07596449
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624679237194490954, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
+      propertyPath: PanAxis.Value
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3064217438988861462, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.6
+      value: -13.26
       objectReference: {fileID: 0}
     - target: {fileID: 3064217438988861462, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.29
+      value: 2.56
       objectReference: {fileID: 0}
     - target: {fileID: 3064217438988861462, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.28
+      value: -38.32
       objectReference: {fileID: 0}
     - target: {fileID: 3064217438988861462, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11002,19 +11006,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5481443702324045390, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9154921
+      value: 0.70301455
       objectReference: {fileID: 0}
     - target: {fileID: 5481443702324045390, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.098923825
+      value: 0.07596449
       objectReference: {fileID: 0}
     - target: {fileID: 5481443702324045390, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.38772792
+      value: 0.70301455
       objectReference: {fileID: 0}
     - target: {fileID: 5481443702324045390, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04189608
+      value: -0.07596449
       objectReference: {fileID: 0}
     - target: {fileID: 6040261459276758037, guid: 6d5bc687f39a5614eb04a0c43eb54d32, type: 3}
       propertyPath: m_SizeDelta.y
@@ -17370,14 +17374,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b02054b2be250fb48b752c3e30be1dbd, type: 2}
+  m_sharedMaterial: {fileID: -2508621118753906542, guid: b02054b2be250fb48b752c3e30be1dbd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278513407
+    rgba: 4026855167
   m_fontColor: {r: 1, g: 0.93277675, b: 0.0141509175, a: 0.9411765}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -17436,7 +17440,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1693557449

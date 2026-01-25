@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b02054b2be250fb48b752c3e30be1dbd, type: 2}
+  m_sharedMaterial: {fileID: -2508621118753906542, guid: b02054b2be250fb48b752c3e30be1dbd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -374,7 +374,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da688a424f3780f4f9f1eb3e132d1e7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ForcedCall: 0
   item: {fileID: 11400000, guid: 064934e4ab630a3458a8392f4a50bcf7, type: 2}
+  StartInteractedEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPointerExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6996831345166956608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +397,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff845d1ac163db488392c21034d6147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interaction_text: "E - \u043A\u0443\u0431\u0438\u043A"
   textMesh: {fileID: 4151006033632780684}
   activationDistance: 4
   fadeSpeed: 2
