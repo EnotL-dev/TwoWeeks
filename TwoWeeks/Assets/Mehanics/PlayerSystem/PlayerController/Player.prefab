@@ -637,6 +637,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45bb77f72db70443aaf9360fd1cc1b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStop:
+    m_PersistentCalls:
+      m_Calls: []
   _phoneView: {fileID: 1449130347130968112}
   _camera: {fileID: 3581657235895293143}
   _debug: 1
@@ -1391,8 +1397,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ' '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d69731946787f34e94aa0b6571da46d, type: 2}
+  m_sharedMaterial: {fileID: 1076212772415253807, guid: 7d69731946787f34e94aa0b6571da46d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1765,8 +1771,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ' '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d69731946787f34e94aa0b6571da46d, type: 2}
+  m_sharedMaterial: {fileID: 1076212772415253807, guid: 7d69731946787f34e94aa0b6571da46d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1948,7 +1954,7 @@ Transform:
   m_GameObject: {fileID: 9034752263605546200}
   serializedVersion: 2
   m_LocalRotation: {x: 0.098923825, y: 0.38772792, z: -0.04189608, w: 0.9154921}
-  m_LocalPosition: {x: 1.19, y: 1.7800001, z: 1.29}
+  m_LocalPosition: {x: 0, y: 1.7800001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

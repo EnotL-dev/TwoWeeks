@@ -5,6 +5,6 @@ namespace LevelSystem
 {
     public class LevelManager : MonoBehaviour
     {
-        public void LoadScene(int levelIndex) => SceneManager.LoadScene(levelIndex);
+        public void LoadScene(string levelIndex) => SceneManager.LoadScene(levelIndex);
     }
 }
