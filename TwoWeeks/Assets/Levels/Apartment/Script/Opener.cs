@@ -12,8 +12,10 @@ namespace Environment
         private Quaternion _closedRotation;
         private Coroutine _coroutine;
 
+        [ContextMenu("Toggle")]
         public void Toggle()
         {
+            Debug.Log("Toggle");
             if (_coroutine != null)
                 StopCoroutine(_coroutine);
             if (_isOpen)
