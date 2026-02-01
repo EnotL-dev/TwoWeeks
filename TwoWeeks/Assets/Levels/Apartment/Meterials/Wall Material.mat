@@ -45,7 +45,7 @@ Material:
     - _Metallic: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Scale: 1
+    - _Scale: 0.63
     - _Smoothness: 0.5
     m_Colors:
     - _Texture_size: {r: 1.5, g: 1.5, b: 0, a: 0}
